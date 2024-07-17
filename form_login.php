@@ -42,7 +42,7 @@
                     if($_GET["mensaje"]!="ok"){
                     echo "<div class='text-center mt-4 mb-5'><div class='alert alert-danger' role='alert'><strong>".$_GET["mensaje"]."</strong></div></div>"; 
                     }else{
-                    echo "<div class='text-center mt-4 mb-5'><div class='alert alert-success' role='alert'><strong> Acceso permitido!</strong><a href='listado.php' class='text-primary ms-3'>Volver al inicio</a></div></div>";  
+                    echo "<div class='text-center mt-4 mb-5'><div class='alert alert-success' role='alert'><strong> Acceso permitido!</strong><a href='_.php' class='text-primary ms-3'>Volver al inicio</a></div></div>";  
                     }  
                 } 
                 ?> 
