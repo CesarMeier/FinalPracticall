@@ -1,5 +1,4 @@
 <?php
-
 require_once "conexion.php";
 
 $id=$_POST["id"];
@@ -14,5 +13,4 @@ $sql="Delete from usuario where id=$id";
 mysqli_query($conex,$sql);
 
 header("Location:listado_usuarios.php");
-
 ?>

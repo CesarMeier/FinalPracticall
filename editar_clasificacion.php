@@ -2,7 +2,6 @@
 session_start();
 
 require_once "conexion.php";
-
 require_once "funcionesval.php";
 
 $error = "";
@@ -13,10 +12,8 @@ $opcionSelec=$_POST['clasi'];
 $_SESSION['idp']=$idpieza;
 $_SESSION['clasificacion']=$opcionSelec;
 
-
 //Funcion de Validacion de Datos VALIDACION DATOS DE LA TABLA 
 if (ValidacionDatos()){
-        
     $distribucion= $_POST['distribucion'];
     $reino = $_POST['reino'];
     $phylum= $_POST['phylum'];
@@ -27,6 +24,7 @@ if (ValidacionDatos()){
     $especie = $_POST['especie'];
 
 	$division = $_POST['division']; //botanica
+
 	$eras = $_POST['eras']; //Paleontologia
     $periodos = $_POST['periodos'];//Paleontologia
 
@@ -35,8 +33,6 @@ if (ValidacionDatos()){
     $material = $_POST['material']; //Arqueologia
 
 	$tipo = $_POST['tipo'];//geologia y ictiologia y oologia
-
-
 
     switch($opcionSelec){
 		
@@ -86,14 +82,11 @@ if (ValidacionDatos()){
 		
     // Evalúa si se realizó la actualización de algun dato
     if (mysqli_affected_rows($conex)==1){
-
         header("Location:form_editar_clasificacion.php?msje=ok");
-
     }else{
 	    $error.="No se realizó Actualización! ";
 	    header("Location:form_editar_clasificacion.php?msje=".$error);
     }
-
 };
     
 	

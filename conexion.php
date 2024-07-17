@@ -4,7 +4,6 @@ $usuario="root";
 $password="";
 $bd="museo_db";
 
-
 $conex = mysqli_connect($servidor,$usuario,$password,$bd);
 
 If (!$conex) {

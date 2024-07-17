@@ -2,7 +2,7 @@
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Categorias</h2>
-                    <h3 class="section-subheading text-muted">Se presentan las categorias de forma general.</h3>
+                    <h3 class="section-subheading text-muted">Estas diferentes ciencias podes encontrar en nuestro museo!</h3>
                 </div>
                 <div class="row">
                     <div class="col-lg-3 col-sm-6 mb-4">
@@ -203,7 +203,7 @@
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">Arqueología</h2>
                                     <img class="img-fluid d-block mx-auto" src="imagenes/categorias/arqueologia.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <p>La arqueología es el estudio de los restos materiales humanos preservados en el tiempo y dispersos en la geografía. A través del análisis de esos restos es posible recomponer y comprender los cambios que las sociedades humanas han vivido a lo largo de su historia.</p>
                                 </div>
                             </div>
                         </div>
@@ -223,7 +223,8 @@
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">Osteología</h2>
                                     <img class="img-fluid d-block mx-auto" src="imagenes/categorias/osteologia.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <p>La osteología es una rama de la antropología física y es parte de la anatomía descriptiva, por lo tanto, es fundamental en la práctica médica, con fines terapéuticos, de conservación y restablecimiento de la salud.
+                                        Esta ciencia se ocupa del estudio de los huesos, órganos blanquecinos duros y transparentes, que en conjunto constituyen el esqueleto. Este armazón del cuerpo humano, formado por 206 huesos, sirve de sostén y protección.</p>
                                 </div>
                             </div>
                         </div>
@@ -243,7 +244,7 @@
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">Geología</h2>
                                     <img class="img-fluid d-block mx-auto" src="imagenes/categorias/geologia.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <p>La geología es la ciencia natural dedicada al estudio del planeta Tierra. Su objetivo es comprender la composición física y la estructura interna y externa de nuestro planeta, así como los distintos procesos y dinámicas que han permitido su evolución desde su formación hasta nuestros tiempos. Su nombre proviene del griego Geo, “Tierra”, y logos, “palabra o saber”.</p>
                                 </div>
                             </div>
                         </div>
@@ -262,9 +263,8 @@
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">Ictiología</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
                                     <img class="img-fluid d-block mx-auto" src="imagenes/categorias/ictiologia.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <p>La ictiología es una rama de la zoología dedicada al estudio de los peces.1​ Estos se clasifican en tres grandes grupos: los osteíctios (peces óseos), los condrictios (peces cartilaginosos, tales como el tiburón y la raya) y los agnatos (peces sin mandíbula).1​ Hasta febrero de 2022 se habían descrito alrededor de 34 800 especies.2​ Se estima que cada año se identifican 100 especies nuevas de peces.</p>
                                 </div>
                             </div>
                         </div>
@@ -284,7 +284,7 @@
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">Oología</h2>
                                     <img class="img-fluid d-block mx-auto" src="imagenes/categorias/oologia.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <p>La oología es la rama de la zoología que versa sobre el estudio de los huevos, especialmente los huevos de aves. También se aplica a la afición de coleccionar huevos de pájaros salvajes. El muestrario de huevos reunido por aficionados o científicos es denominado colección oológica​ u ovoteca.</p>
                                 </div>
                             </div>
                         </div>

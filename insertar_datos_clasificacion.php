@@ -2,7 +2,6 @@
 session_start();
 
 require_once "conexion.php";
-
 require_once "funcionesval.php";
 
 $error = "";
@@ -11,10 +10,8 @@ $opcionSelec = $_POST['clas'];
 
 //die ($opcionSelec );
 
- //Funcion de Validacion de Datos VALIDACION DATOS DE LA TABLA 
-
- if (ValidacionDatos()){
-        
+//Funcion de Validacion de Datos VALIDACION DATOS DE LA TABLA 
+if (ValidacionDatos()){
     $distribucion= $_POST['distribucion'];
     $reino = $_POST['reino'];
     $phylum= $_POST['phylum'];
@@ -23,12 +20,10 @@ $opcionSelec = $_POST['clas'];
     $familia = $_POST['familia'];
     $genero = $_POST['genero'];
     $especie = $_POST['especie'];
-  
 
     $idpieza = $_SESSION['idpieza'];
 
     switch($opcionSelec ){
-
         case "zoologia":
              $sql="INSERT INTO zoologia(distribucion,reino,phylum,clase,orden,familia,genero,especie,pieza_id) VALUES('$distribucion','$reino','$phylum','$clase','$orden','$familia','$genero','$especie',$idpieza)";
         break;
@@ -82,24 +77,17 @@ $opcionSelec = $_POST['clas'];
 
             $sql="INSERT INTO oologia(distribucion,tipo,especie,reino,clase,orden,familia,genero,pieza_id) VALUES('$distribucion','$tipo','$especie','$reino','$clase','$orden','$familia','$genero',$idpieza)";
         break;
+    }
 
+    $result=mysqli_query($conex,$sql);
 
-}
-
-
-        $result=mysqli_query($conex,$sql);
-
-		//Inserta los datos 
-
-		if ($result){
-			
-            header("Location:form_agregar_distribucion.php?mensaje=ok");
-
-        }else{ 
-				$error.="Error en la Inserción de datos ";
-				header("Location:form_agregar_clasificacion.php?mensaje=".$error);
-            }
-
-		};
+	//Inserta los datos 
+	if ($result){	
+        header("Location:form_agregar_distribucion.php?mensaje=ok");
+    }else{ 
+		$error.="Error en la Inserción de datos ";
+		header("Location:form_agregar_clasificacion.php?mensaje=".$error);
+    }
+};
     
 	
