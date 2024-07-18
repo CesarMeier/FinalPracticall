@@ -15,7 +15,7 @@ $sql ="select * from pieza, ".$opcionSelec." where (pieza.id=".$opcionSelec.".pi
 $result=mysqli_query($conex,$sql); 
 
 $fila=mysqli_fetch_array($result);
-die($sql);
+//die($sql);
 
 ?>
 
@@ -39,11 +39,6 @@ die($sql);
                     <div class="col-sm-6">
                         <label for="reino" class="form-label">Reino</label>
                         <input type="text" class="form-control" name="reino" id="reino" value="<?php echo $fila['reino'];?>">
-                    </div>
-
-                    <div class="col-sm-6 mb-3">
-                        <label for="phylum" class="form-label">Phylum</label>
-                        <input type="text" class="form-control" name="phylum" id="phylum"  value="<?php echo $fila['phylum'];?>">
                     </div>
 
                     <div class="col-sm-6">
@@ -74,18 +69,28 @@ die($sql);
                     <?php if($opcionSelec=="zoologia"){ ?> 
 
                     <input type="hidden" class="form-control" name="idz" id="idz" value="<?php echo $fila['idz'];?>">
+                    
+                    <div class="col-sm-6 mb-3">
+                        <label for="phylum" class="form-label">* Phylum</label>
+                        <input type="text" class="form-control" name="phylum" id="phylum" value="<?php echo $fila['phylum'];?>">
+                    </div>
 
                     <div class="col-sm-6">
-                        <label for="distribucion" class="form-label">* Distribucion</label>
+                        <label for="distribucion" class="form-label">* Clasificacion</label>
                         <input type="text" class="form-control" name="distribucion" id="distribucion"  value="<?php echo $fila['distribucion'];?>">
                     </div>
 
                     <?php }else if($opcionSelec =="botanica"){ ?>
                 
                     <input type="hidden" class="form-control" name="idb" id="idb" value="<?php echo $fila['idb'];?>">
+                    
+                    <div class="col-sm-6 mb-3">
+                        <label for="phylum" class="form-label">Phylum</label>
+                        <input type="text" class="form-control" name="phylum" id="phylum" value="<?php echo $fila['phylum'];?>">
+                    </div>
 
                     <div class="col-sm-6">
-                        <label for="distribucion" class="form-label">* Distribucion</label>
+                        <label for="distribucion" class="form-label">* Clasificacion</label>
                         <input type="text" class="form-control" name="distribucion" id="distribucion"  value="<?php echo $fila['distribucion'];?>" >
                     </div>
 

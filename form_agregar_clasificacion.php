@@ -43,11 +43,6 @@ $fila=mysqli_fetch_array($result);
                         <input type="text" class="form-control" name="reino" id="reino" placeholder="Ingresar reino">
                     </div>
 
-                    <div class="col-sm-6 mb-3">
-                        <label for="phylum" class="form-label">Phylum</label>
-                        <input type="text" class="form-control" name="phylum" id="phylum" placeholder="Ingresar phylum" >
-                    </div>
-
                     <div class="col-sm-6">
                         <label for="clase" class="form-label">Clase</label>
                         <input type="text" class="form-control" name="clase" id="clase" placeholder="Ingresar clase">
@@ -75,6 +70,11 @@ $fila=mysqli_fetch_array($result);
 
                     <?php if($fila['clasificacion']=="zoologia"){ ?> 
 
+                    <div class="col-sm-6 mb-3">
+                        <label for="phylum" class="form-label">Phylum</label>
+                        <input type="text" class="form-control" name="phylum" id="phylum" placeholder="Ingresar phylum" >
+                    </div>
+
                     <div class="col-sm-6">
                         <label for="distribucion" class="form-label">* Clasificacion</label>
                         <input type="text" class="form-control" name="distribucion" id="distribucion" placeholder="Ejemplo invertebrados, vertebrados.." required >
@@ -82,6 +82,11 @@ $fila=mysqli_fetch_array($result);
 
                     <?php }else if($fila['clasificacion'] =="botanica"){ ?>
         
+                    <div class="col-sm-6 mb-3">
+                        <label for="phylum" class="form-label">Phylum</label>
+                        <input type="text" class="form-control" name="phylum" id="phylum" placeholder="Ingresar phylum" >
+                    </div>
+
                     <div class="col-sm-6">
                         <label for="distribucion" class="form-label">* Clasificacion</label>
                         <input type="text" class="form-control" name="distribucion" id="distribucion" placeholder="Por ejemplo algas, briofitos, etc..." required >

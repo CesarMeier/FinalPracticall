@@ -14,7 +14,6 @@ $opcionSelec = $_POST['clas'];
 if (ValidacionDatos()){
     $distribucion= $_POST['distribucion'];
     $reino = $_POST['reino'];
-    $phylum= $_POST['phylum'];
     $clase = $_POST['clase'];
     $orden = $_POST['orden'];
     $familia = $_POST['familia'];
@@ -25,11 +24,15 @@ if (ValidacionDatos()){
 
     switch($opcionSelec ){
         case "zoologia":
+            
+            $phylum= $_POST['phylum'];
+
              $sql="INSERT INTO zoologia(distribucion,reino,phylum,clase,orden,familia,genero,especie,pieza_id) VALUES('$distribucion','$reino','$phylum','$clase','$orden','$familia','$genero','$especie',$idpieza)";
         break;
 
         case "botanica":
-        
+
+            $phylum= $_POST['phylum'];
             $division = $_POST['division'];
 
             $sql="INSERT INTO botanica(distribucion,reino,phylum,division,clase,orden,familia,genero,especie,pieza_id) VALUES('$distribucion','$reino','$phylum','$division','$clase','$orden','$familia','$genero','$especie',$idpieza)";
@@ -83,7 +86,7 @@ if (ValidacionDatos()){
 
 	//Inserta los datos 
 	if ($result){	
-        header("Location:form_agregar_distribucion.php?mensaje=ok");
+        header("Location:form_agregar_clasificacion.php?mensaje=ok");
     }else{ 
 		$error.="Error en la Inserción de datos ";
 		header("Location:form_agregar_clasificacion.php?mensaje=".$error);

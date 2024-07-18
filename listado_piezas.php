@@ -111,34 +111,12 @@ if (!isset($_GET["pg"])){
                                     <button class="btn btn-outline-danger btn-sm" type="submit" name="btnborrar" id="btnborrar">Bor</button></form>
                                 </div>
 
-                                
-                                <div class="d-sm-inline-block">
-                                    <form id="infoForm" action="info_clasificacion.php" method="post">
-                                        <input type="hidden" name="id" value="<?php echo $fila['id']; ?>">
-                                        <input type="hidden" name="clasificacion" value="<?php echo $fila['clasificacion']; ?>">
-                                        <button type="button" class="btn btn-outline-success btn-sm"  data-bs-toggle="modal" data-bs-target="#exampleModal">Info</button>
-                                    </form>
-                            
-                                    <!-- Modal -->
-                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    ...
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                    <button type="button" class="btn btn-primary">Save changes</button>
-                                                </div>
-                                            </div>
-                                        </div>
+ 
+                                <div class="d-sm-inline-block"><form action="info_clasificacion.php" method="post">
+                                    <input type="hidden" name="id" value="<?php echo $fila['id'];?>">
+                                    <input type="hidden" name="clasificacion" value="<?php echo $fila['clasificacion'];?>">
+                                    <button class="btn btn-outline-success btn-sm" type="submit" name="btninfo" id="btninfo">Info</button></form>
                                 </div>
-                                
-
                             </td>
                         </tr>
 
@@ -196,39 +174,6 @@ if (!isset($_GET["pg"])){
 
         <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
         <script src="js/barra.js"></script>
-
-        <!-- Incluir jQuery y Bootstrap bundle (popper.js incluido) -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
-
-<!-- Script para cargar contenido en el modal 
-<script>
-    function cargarContenidoModal() {
-        var formData = $('#infoForm').serialize();
-
-        $.ajax({
-            type: 'POST',
-            url: 'info_clasificacion.php',
-            data: formData,
-            success: function(response) {
-                $('#modal-body-content').html(''); // Limpiar contenido anterior
-                $('#modal-body-content').html(response); // Insertar nuevo contenido en el modal
-            },
-            error: function() {
-                alert('Error al cargar la información');
-            }
-        });
-    }
-
-    // Forzar la recarga del modal al mostrarse
-    $(document).ready(function() {
-        $('#exampleModal').on('show.bs.modal', function(event) {
-            $('#modal-body-content').html(''); // Limpiar contenido anterior
-            cargarContenidoModal(); // Cargar nuevo contenido en el modal
-        });
-    });
-</script>
--->
 
     </body>
 </html>

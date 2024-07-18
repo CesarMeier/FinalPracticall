@@ -49,11 +49,6 @@ $fila=mysqli_fetch_array($result);
                         <input type="text" class="form-control" name="reino" id="reino" value="<?php echo $fila['reino'];?>">
                     </div>
 
-                    <div class="col-sm-6 mb-3">
-                        <label for="phylum" class="form-label">Phylum</label>
-                        <input type="text" class="form-control" name="phylum" id="phylum"  value="<?php echo $fila['phylum'];?>">
-                    </div>
-
                     <div class="col-sm-6">
                         <label for="clase" class="form-label">Clase</label>
                         <input type="text" class="form-control" name="clase" id="clase"  value="<?php echo $fila['clase'];?>">
@@ -83,8 +78,13 @@ $fila=mysqli_fetch_array($result);
 
                     <input type="hidden" class="form-control" name="idz" id="idz" value="<?php echo $fila['idz'];?>">
 
+                    <div class="col-sm-6 mb-3">
+                        <label for="phylum" class="form-label">* Phylum</label>
+                        <input type="text" class="form-control" name="phylum" id="phylum"  value="<?php echo $fila['phylum'];?>">
+                    </div>
+
                     <div class="col-sm-6">
-                        <label for="distribucion" class="form-label">* Distribucion</label>
+                        <label for="distribucion" class="form-label">* Clasificacion</label>
                         <input type="text" class="form-control" name="distribucion" id="distribucion"  value="<?php echo $fila['distribucion'];?>">
                     </div>
 
@@ -92,8 +92,13 @@ $fila=mysqli_fetch_array($result);
                 
                     <input type="hidden" class="form-control" name="idb" id="idb" value="<?php echo $fila['idb'];?>">
 
+                    <div class="col-sm-6 mb-3">
+                        <label for="phylum" class="form-label">* Phylum</label>
+                        <input type="text" class="form-control" name="phylum" id="phylum"  value="<?php echo $fila['phylum'];?>">
+                    </div>
+
                     <div class="col-sm-6">
-                        <label for="distribucion" class="form-label">* Distribucion</label>
+                        <label for="distribucion" class="form-label">* Clasificacion</label>
                         <input type="text" class="form-control" name="distribucion" id="distribucion"  value="<?php echo $fila['distribucion'];?>" >
                     </div>
 
@@ -141,7 +146,7 @@ $fila=mysqli_fetch_array($result);
                     <input type="hidden" class="form-control" name="idos" id="idos" value="<?php echo $fila['idos'];?>"> 
 
                     <div class="col-sm-6">
-                        <label for="distribucion" class="form-label">* Distribucion</label>
+                        <label for="distribucion" class="form-label">* Clasificacion</label>
                         <input type="text" class="form-control" name="distribucion" id="distribucion"  value="<?php echo $fila['distribucion'];?>" >
                     </div>
 
@@ -152,11 +157,6 @@ $fila=mysqli_fetch_array($result);
                     <div class="col-sm-6">
                         <label for="tipo" class="form-label">* Tipo</label>
                         <input type="text" class="form-control" name="tipo" id="tipo" value="<?php echo $fila['tipo'];?>" >
-                    </div>
-
-                    <div class="col-sm-6">
-                        <label for="distribucion" class="form-label">* Clasificacion Rocas</label>
-                        <input type="text" class="form-control" name="distribucion" id="distribucion"  value="<?php echo $fila['distribucion'];?>" >
                     </div>
 
                     <?php }else if($opcionSelec=="ictiologia"){ ?>
