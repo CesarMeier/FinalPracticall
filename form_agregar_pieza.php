@@ -28,7 +28,7 @@ $fila=mysqli_fetch_array($result);
 
         <section>
             <div class="container mt-2 mb-5">
-                <div class="text-center mt-5 mb-2 text-primary"><h2>Agregar Pieza</h2></div>	
+                <div class="text-center mt-5 mb-2 text-success"><h2>Agregar Pieza</h2></div>	
                 <div class="text-secondary"><p><small>* Dato Obligatorio</small></p></div>
 
                 <form class="row g-3" action="insertar_datos_pieza.php" method="post" >
@@ -58,9 +58,15 @@ $fila=mysqli_fetch_array($result);
                         <input type="text" class="form-control" name="especie" id="especie" placeholder="Ingresar Especie" required>
                     </div>
 
-                    <div class="col-sm-6 mb-3">
+                    <div class="col-sm-6 mb-3"> 
                         <label for="estadoconservacion" class="form-label">* Estado de Conservacion</label>
-                        <input type="text" class="form-control" name="estadoconservacion" id="estadoconservacion" placeholder="Estado de Conservacion" required>
+                        <select class="form-select " aria-label="Default select example" name="estadoconservacion">
+                            <option selected>Seleccione Estado</option>
+                            <option value="zoologia">Bueno</option>
+                            <option value="botanica">Muy Bueno</option>
+                            <option value="paleontologia">Excelente</option>
+                            <option value="arqueologia">Malo</option>
+                        </select>
                     </div>
 
                     <div class="col-sm-6 mb-3">

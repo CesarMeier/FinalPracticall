@@ -29,180 +29,120 @@ $fila=mysqli_fetch_array($result);
     </head>
     <body>
 
-        <section>
+        <?php
+        include('header.php');
+        ?>
+            
             <div class="container mt-2 mb-5">
-                <form class="row g-3" action="" method="post">
 
-                    <input type="hidden" class="form-control" name="id" id="id" value="<?php echo $fila['pieza_id'];?>">
-                    <input type="hidden" class="form-control" name="clasi" id="clasi" value="<?php echo $fila['clasificacion'];?>">
+                <div class="card text-bg-light border-success text-center mt-5 mb-5">
 
-                    <div class="col-sm-6">
-                        <label for="reino" class="form-label">Reino</label>
-                        <input type="text" class="form-control" name="reino" id="reino" value="<?php echo $fila['reino'];?>">
-                    </div>
-
-                    <div class="col-sm-6">
-                        <label for="clase" class="form-label">Clase</label>
-                        <input type="text" class="form-control" name="clase" id="clase"  value="<?php echo $fila['clase'];?>">
-                    </div>
-
-                    <div class="col-sm-6 mb-3">
-                        <label for="orden" class="form-label">Orden</label>
-                        <input type="text" class="form-control" name="orden" id="orden"  value="<?php echo $fila['orden'];?>">
-                    </div>
-
-                    <div class="col-sm-6 mb-3">
-                        <label for="familia" class="form-label">Familia</label>
-                        <input type="text" class="form-control" name="familia" id="familia" value="<?php echo $fila['familia'];?>">
-                    </div>
-
-                    <div class="col-sm-6 mb-3">
-                        <label for="genero" class="form-label">Genero</label>
-                        <input type="text" class="form-control" name="genero" id="genero"  value="<?php echo $fila['genero'];?>">
-                    </div>
-                    
-                    <div class="col-sm-6">
-                        <label for="especie" class="form-label">Especie</label>
-                        <input type="text" class="form-control" name="especie" id="especie" value="<?php echo $fila['especie'];?>">
-                    </div>
-
-                    <?php if($opcionSelec=="zoologia"){ ?> 
-
-                    <input type="hidden" class="form-control" name="idz" id="idz" value="<?php echo $fila['idz'];?>">
-                    
-                    <div class="col-sm-6 mb-3">
-                        <label for="phylum" class="form-label">* Phylum</label>
-                        <input type="text" class="form-control" name="phylum" id="phylum" value="<?php echo $fila['phylum'];?>">
-                    </div>
-
-                    <div class="col-sm-6">
-                        <label for="distribucion" class="form-label">* Clasificacion</label>
-                        <input type="text" class="form-control" name="distribucion" id="distribucion"  value="<?php echo $fila['distribucion'];?>">
-                    </div>
-
-                    <?php }else if($opcionSelec =="botanica"){ ?>
-                
-                    <input type="hidden" class="form-control" name="idb" id="idb" value="<?php echo $fila['idb'];?>">
-                    
-                    <div class="col-sm-6 mb-3">
-                        <label for="phylum" class="form-label">Phylum</label>
-                        <input type="text" class="form-control" name="phylum" id="phylum" value="<?php echo $fila['phylum'];?>">
-                    </div>
-
-                    <div class="col-sm-6">
-                        <label for="distribucion" class="form-label">* Clasificacion</label>
-                        <input type="text" class="form-control" name="distribucion" id="distribucion"  value="<?php echo $fila['distribucion'];?>" >
-                    </div>
-
-                    <div class="col-sm-6">
-                        <label for="division" class="form-label">* Division</label>
-                        <input type="text" class="form-control" name="division" id="division"  value="<?php echo $fila['division'];?>">
-                    </div>
-
-                    <?php } else if($opcionSelec=="paleontologia"){ ?>
-                
-                    <input type="hidden" class="form-control" name="idp" id="idp" value="<?php echo $fila['idp'];?>">
-
-                    <div class="col-sm-6">
-                        <label for="eras" class="form-label">* Eras</label>
-                        <input type="text" class="form-control" name="eras" id="eras"  value="<?php echo $fila['eras'];?>" >
-                    </div>
-
-                    <div class="col-sm-6">
-                        <label for="periodos" class="form-label">* Periodos</label>
-                        <input type="text" class="form-control" name="periodos" id="periodos"  value="<?php echo $fila['periodos'];?>" >
-                    </div>
-
-                    <?php }else if($opcionSelec =="arqueologia"){ ?>
-
-                    <input type="hidden" class="form-control" name="ida" id="ida" value="<?php echo $fila['ida'];?>">
-
-                    <div class="col-sm-6">
-                        <label for="integridadHistorica" class="form-label">* Integridad historica</label>
-                        <input type="text" class="form-control" name="integridadHistorica" id="integridadHistorica"  value="<?php echo $fila['integridadHistorica'];?>">
-                    </div>
-
-                    <div class="col-sm-6">
-                        <label for="estetica" class="form-label">* Estetica</label>
-                        <input type="text" class="form-control" name="estetica" id="estetica" value="<?php echo $fila['estetica'];?>">
-                    </div>
-
-                    <div class="col-sm-6">
-                        <label for="material" class="form-label">* Material</label>
-                        <input type="text" class="form-control" name="material" id="material" value="<?php echo $fila['material'];?>" >
-                    </div>
-
-
-                    <?php }else if($opcionSelec=="osteologia"){ ?>
-            
-                    <input type="hidden" class="form-control" name="idos" id="idos" value="<?php echo $fila['idos'];?>"> 
-
-                    <div class="col-sm-6">
-                        <label for="distribucion" class="form-label">* Distribucion</label>
-                        <input type="text" class="form-control" name="distribucion" id="distribucion"  value="<?php echo $fila['distribucion'];?>" >
-                    </div>
-
-                    <?php }else if($opcionSelec=="geologia"){ ?>
-            
-                    <input type="hidden" class="form-control" name="idg" id="idg" value="<?php echo $fila['idg'];?>">
-
-                    <div class="col-sm-6">
-                        <label for="tipo" class="form-label">* Tipo</label>
-                        <input type="text" class="form-control" name="tipo" id="tipo" value="<?php echo $fila['tipo'];?>" >
-                    </div>
-
-                    <div class="col-sm-6">
-                        <label for="distribucion" class="form-label">* Clasificacion Rocas</label>
-                        <input type="text" class="form-control" name="distribucion" id="distribucion"  value="<?php echo $fila['distribucion'];?>" >
-                    </div>
-
-                    <?php }else if($opcionSelec=="ictiologia"){ ?>
-        
-                    <input type="hidden" class="form-control" name="idi" id="idi" value="<?php echo $fila['idi'];?>">
-                
-                    <div class="col-sm-6">
-                        <label for="tipo" class="form-label">* Tipo</label>
-                        <input type="text" class="form-control" name="tipo" id="tipo" value="<?php echo $fila['tipo'];?>" >
-                    </div>
-
-                    <div class="col-sm-6">
-                        <label for="distribucion" class="form-label">* Clasificacion</label>
-                        <input type="text" class="form-control" name="distribucion" id="distribucion"  value="<?php echo $fila['distribucion'];?>">
+                    <div class="card-header text-center text-success ">
+                        <h2>Datos de la pieza numero: <?php echo $fila['numinventario'];?> </h2>
                     </div>
                 
-                    <?php }else if($opcionSelec=="oologia"){ ?>
-                        
-                    <input type="hidden" class="form-control" name="ido" id="ido" value="<?php echo $fila['ido'];?>">
-                    
-                    <div class="col-sm-6">
-                        <label for="distribucion" class="form-label">* Clasificacion</label>
-                        <input type="text" class="form-control" name="distribucion" id="distribucion"  value="<?php echo $fila['distribucion'];?>" >
-                    </div>
+                    <form class="row g-4 justify-content-center mt-2" action="" method="post">
 
-                    <div class="col-sm-6">
-                        <label for="tipo" class="form-label">* Tipo</label>
-                        <input type="text" class="form-control" name="tipo" id="tipo"  value="<?php echo $fila['tipo'];?>" >
-                    </div>
+                        <input type="hidden" class="form-control" name="id" id="id" value="<?php echo $fila['pieza_id'];?>">
+                        <input type="hidden" class="form-control" name="clasi" id="clasi" value="<?php echo $fila['clasificacion'];?>">
 
-                    <?php }; ?>
+                        <div class="row">
+                            
+                            <div class="col">
+                                <ul class="list-group list-group-flush fw-bold  " >
 
-                    <div class="col-12 text-center">
-                        <button type="submit" class="btn btn-primary btn-sm" name="btn_editar_clasificacion" id="editar_clasificacion">Actualizar</button>
-                        <a class="btn btn-primary btn-sm ms-2" href="listado_piezas.php" role="button">Cancelar</a>
-                    </div>
+                                <li class="list-group-item ">Reino:</li>
+                                <li class="list-group-item">Clase:</li>
+                                <li class="list-group-item">Orden:</li>
+                                <li class="list-group-item">Familia:</li>
+                                <li class="list-group-item">Genero:</li>
+                                <li class="list-group-item">Especie:</li>
 
-                </form>
+                                <?php if($opcionSelec=="zoologia"){ ?> 
+                                <li class="list-group-item">Phylum: </li>
+                                <li class="list-group-item">Clasificacion: </li>
+                                <?php }else if($opcionSelec =="botanica"){ ?>
+                                <li class="list-group-item">Phylum:</li>
+                                <li class="list-group-item">Clasificacion:</li>
+                                <li class="list-group-item">Division: </li>
+                                <?php } else if($opcionSelec=="paleontologia"){ ?>
+                                <li class="list-group-item">Eras: </li>
+                                <li class="list-group-item">Periodos: </li>
+                                <?php }else if($opcionSelec =="arqueologia"){ ?>
+                                <li class="list-group-item">Integridad historica:</li>
+                                <li class="list-group-item">Estetica:</li>
+                                <li class="list-group-item">Material:</li>
+                                <?php }else if($opcionSelec=="osteologia"){ ?>
+                                <li class="list-group-item">Clasificacion:</li>
+                                <?php }else if($opcionSelec=="geologia"){ ?>
+                                <li class="list-group-item">Tipo:</li>
+                                <li class="list-group-item">Clasificacion de rocas:</li>
+                                <?php }else if($opcionSelec=="ictiologia"){ ?>
+                                <li class="list-group-item">Tipo:</li>
+                                <li class="list-group-item">Clasificacion:</li>
+                                <?php }else if($opcionSelec=="oologia"){ ?>
+                                <li class="list-group-item">Clasificacion:</li>
+                                <li class="list-group-item">Tipo:</li>
+                                <?php }; ?>
+                            </div>
+                            
+                            <!-- Columna 2 -->
+                            <div class="col">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><?php echo $fila['reino'];?></li>
+                                <li class="list-group-item"><?php echo $fila['clase'];?></li>
+                                <li class="list-group-item"><?php echo $fila['orden'];?></li>
+                                <li class="list-group-item"><?php echo $fila['familia'];?></li>
+                                <li class="list-group-item"><?php echo $fila['genero'];?></li>
+                                <li class="list-group-item"><?php echo $fila['especie'];?></li>
 
-                <?php
-                if (isset($_GET["msje"])){
-                    if($_GET["msje"]!="ok"){
-                        echo "<div class='text-center mt-4 mb-5'><div class='alert alert-danger' role='alert'><strong>".$_GET["msje"]."</strong><a href='listado_piezas.php' class='text-primary ms-3'>Volver al Listado</a></div></div>"; 
-                    }else{
-                        echo "<div class='text-center mt-4 mb-5'><div class='alert alert-success' role='alert'><strong>"."Actualización Exitosa!"."</strong><a href='listado_piezas.php' class='text-primary ms-3'>Volver al Listado</a></div></div>";  
-                    }  
-                } 
-                ?> 
+                                <?php if($opcionSelec=="zoologia"){ ?> 
+                                <li class="list-group-item"><?php echo $fila['phylum'];?></li>
+                                <li class="list-group-item"><?php echo $fila['distribucion'];?></li>
+                                <?php }else if($opcionSelec =="botanica"){ ?>
+                                <li class="list-group-item"><?php echo $fila['phylum'];?></li>
+                                <li class="list-group-item"><?php echo $fila['distribucion'];?></li>
+                                <li class="list-group-item"><?php echo $fila['division'];?></li>
+                                <?php } else if($opcionSelec=="paleontologia"){ ?>
+                                <li class="list-group-item"><?php echo $fila['eras'];?></li>
+                                <li class="list-group-item"><?php echo $fila['periodos'];?></li>
+                                <?php }else if($opcionSelec =="arqueologia"){ ?>
+                                <li class="list-group-item"><?php echo $fila['integridadHistorica'];?></li>
+                                <li class="list-group-item"><?php echo $fila['estetica'];?></li>
+                                <li class="list-group-item"><?php echo $fila['material'];?></li>
+                                <?php }else if($opcionSelec=="osteologia"){ ?>
+                                <li class="list-group-item"><?php echo $fila['distribucion'];?></li>
+                                <?php }else if($opcionSelec=="geologia"){ ?>
+                                <li class="list-group-item"><?php echo $fila['tipo'];?></li>
+                                <li class="list-group-item"><?php echo $fila['distribucion'];?></li>
+                                <?php }else if($opcionSelec=="ictiologia"){ ?>
+                                <li class="list-group-item"><?php echo $fila['tipo'];?></li>
+                                <li class="list-group-item"><?php echo $fila['distribucion'];?></li>
+                                <?php }else if($opcionSelec=="oologia"){ ?>
+                                <li class="list-group-item"><?php echo $fila['distribucion'];?></li>
+                                <li class="list-group-item"><?php echo $fila['tipo'];?></li>
+                                <?php }; ?>
+                            </div>
+                        </div>
+                    </ul>
 
+                        <div class="col-12 text-center mb-4">
+                            <a class="btn btn-success btn-sm ms-2" href="listado_piezas.php" role="button">Volver al Listado</a>
+                        </div>
+
+                    </form>
+
+                    <?php
+                    if (isset($_GET["msje"])){
+                        if($_GET["msje"]!="ok"){
+                            echo "<div class='text-center mt-4 mb-5'><div class='alert alert-danger' role='alert'><strong>".$_GET["msje"]."</strong><a href='listado_piezas.php' class='text-primary ms-3'>Volver al Listado</a></div></div>"; 
+                        }else{
+                            echo "<div class='text-center mt-4 mb-5'><div class='alert alert-success' role='alert'><strong>"."Actualización Exitosa!"."</strong><a href='listado_piezas.php' class='text-primary ms-3'>Volver al Listado</a></div></div>";  
+                        }  
+                    } 
+                    ?> 
+
+                </div>
             </div>
         </section>
 

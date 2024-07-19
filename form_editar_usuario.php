@@ -85,7 +85,7 @@ $fila=mysqli_fetch_array($result);
                     
                     <div class="col-12 text-center">
                     <button type="submit" class="btn btn-primary btn-sm" name="btn_editar" id="editar">Actualizar</button>
-                    <a class="btn btn-primary btn-sm ms-2" href="listado_usuario.php" role="button">Cancelar</a>
+                    <a class="btn btn-primary btn-sm ms-2" href="listado_usuarios.php" role="button">Cancelar</a>
                     </div>
 
                 </form>

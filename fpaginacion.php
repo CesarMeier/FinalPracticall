@@ -21,7 +21,7 @@ function contar_registros_usuario($conex){
 }
 
 function paginacion_usuario($conex, $pag){
-    $sql="SELECT * FROM usuario ORDER BY usuario.id LIMIT ".($pag*3).","."3";
+    $sql="SELECT * FROM usuario ORDER BY usuario.id LIMIT ".($pag*6).","."6";
     //die($sql) ;
     $result=mysqli_query($conex, $sql);
     return $result;

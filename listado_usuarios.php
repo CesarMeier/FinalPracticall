@@ -11,7 +11,7 @@ $cantidadregistrosmax=contar_registros_usuario($conex);
 
 if (isset($_POST["clb"]) && !empty($_POST["clb"])){
     $valor=$_POST["clb"];
-    $sql="SELECT * FROM usuario ";
+    $sql="SELECT * FROM usuario WHERE (usuario.dni like '%$valor%') ";
     $result=mysqli_query($conex,$sql);
     
 } else {
@@ -48,7 +48,7 @@ if (!isset($_GET["pg"])){
 
                 <div class="container "> 
                     <form class="d-flex" role="search" method="post" action="">
-                        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" name="clb">
+                        <input class="form-control me-2" type="search" placeholder="Buscar por Documento" aria-label="Search" name="clb">
                         <button class="btn btn-outline-success" type="submit" name="busqueda">Buscar</button>
                     </form>
                 </div>
@@ -104,7 +104,7 @@ if (!isset($_GET["pg"])){
 
                         <?php
                         
-                            $itemspagina= ceil($cantidadregistrosmax/3);
+                            $itemspagina= ceil($cantidadregistrosmax/6);
                             $paginaActual= isset($_GET['pg']) ? $_GET['pg'] : 0;
 
                         //Pagina Anterior

@@ -27,6 +27,10 @@
                         <li class="nav-item">
                             <a class="nav-link text-white" href="form_login.php">Ingresar</a>
                         </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="form_registro.php">Registrar Usuario</a>
+                        </li>
                     </ul> 
 
                     <?php }else if (isset($_SESSION['dnigerente'])) { ?>
@@ -36,7 +40,7 @@
                             <a class="nav-link text-white" href="pag_gerente.php">Gerente</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="listado.php">Listado</a>
+                            <a class="nav-link text-white" href="listado_piezas.php">Listado Piezas</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="form_agregar_pieza.php">Agregar Pieza</a>

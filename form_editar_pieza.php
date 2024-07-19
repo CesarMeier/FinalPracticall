@@ -69,9 +69,15 @@ $fila=mysqli_fetch_array($result);
                         <input type="text" class="form-control" name="especie" id="especie"  value="<?php echo $fila['especie'];?>">
                     </div>
 
-                    <div class="col-sm-6 mb-3">
-                        <label for="estadoconservacion" class="form-label">* Estado de conservacion</label>
-                        <input type="text" class="form-control" name="estadoconservacion" id="estadoconservacion" value="<?php echo $fila['estadoconservacion'];?>" >
+                    <div class="col-sm-6 mb-3"> 
+                        <label for="estadoconservacion" class="form-label">* Estado de Conservacion</label>
+                        <select class="form-select " aria-label="Default select example" name="estadoconservacion" id="estadoconservacion" >
+                            <option selected ><?php echo $fila['estadoconservacion'];?></option>
+                            <option value="nueno">Bueno</option>
+                            <option value="muy bueno">Muy Bueno</option>
+                            <option value="excelente">Excelente</option>
+                            <option value="malo">Malo</option>
+                        </select>
                     </div>
 
                     <div class="col-sm-6 mb-3">

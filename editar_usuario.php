@@ -24,8 +24,9 @@ if(!empty(trim($_POST['dni'])) && !empty(trim($_POST['nombre'])) && !empty(trim(
 		$fecha_registro = date("Y/m/d");
 		$tipo_usuario = $_POST['tipo_usuario'];
 
-        // Se arma la sentencia SQL de Actualización
         $clave=password_hash($_POST['clave'], PASSWORD_DEFAULT);
+		
+		// Se arma la sentencia SQL de Actualización
         $sql="UPDATE usuario SET dni='$dni',nombre='$nombre',apellido='$apellido',telefono='$telefono',email='$email',clave='$clave',fecha_registro='$fecha_registro',tipo_usuario='$tipo_usuario' WHERE id=$id";    
 
         // Ejecuta la sentencia

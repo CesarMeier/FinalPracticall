@@ -50,12 +50,13 @@ if (!isset($_GET["pg"])){
                 
                 <div class="container ">
                     <form class="d-flex" role="search" method="post" action="">
-                        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" name="clb">
-                        <button class="btn btn-outline-success" type="submit" name="busqueda">Buscar por especie</button>
+                        <input class="form-control me-2" type="search" placeholder="Buscar por especie" aria-label="Search" name="clb">
+                        <button class="btn btn-outline-success" type="submit" name="busqueda">Buscar</button>
                     </form>
                 </div>
             
                 <table class="table table-striped table-hover"> 
+
 
                     <thead>
                         <tr>
@@ -68,8 +69,10 @@ if (!isset($_GET["pg"])){
                             <th scope="col">Clasificacion</th>
                             <th scope="col">Observacion</th>
                             <th scope="col">Donante</th>
-                            <th scope="col">Edicion</th>
                             <th scope="col">Acciones</th>
+                            <?php if (isset($_SESSION['dniadmin'])  || isset($_SESSION['dnigerente'])){ ?> 
+                            <th scope="col">edicion</th>
+                            <?php  }  ?> 
                         </tr>
                     </thead>
             
@@ -90,39 +93,54 @@ if (!isset($_GET["pg"])){
                             <td><?php echo $fila["observacion"]; ?></td>
                             <td><?php echo $fila["nombre"]." ".$fila["apellido"]; ?></td>
 
-                            <td>
-                                <div class="d-sm-inline-block"><form action="form_editar_pieza.php" method="post">
-                                    <input type="hidden" name="id" value="<?php echo $fila['id'];$fila['clasificacion'];?>">
-                                    <button class="btn btn-outline-success btn-sm" type="submit" name="btneditarpieza" id="btneditarpieza">Edi pie</button></form>
-                                </div>
 
-                                <div class="d-sm-inline-block"><form action="form_editar_clasificacion.php" method="post">
-                                    <input type="hidden" name="id" value="<?php echo $fila['id'];?>">
-                                    <input type="hidden" name="clasificacion" value="<?php echo $fila['clasificacion'];?>">
-                                    <button class="btn btn-outline-success btn-sm" type="submit" name="btneditarclasi" id="btneditarclasi">Edi cla</button></form>
-                                </div>
+                            <?php if(!isset($_SESSION['dniadmin']) && !isset($_SESSION['dnigerente'])){ ?> 
 
-                            </td>
+                                <td>
+                                    <div class="d-sm-inline-block"><form action="info_clasificacion.php" method="post">
+                                        <input type="hidden" name="id" value="<?php echo $fila['id'];?>">
+                                        <input type="hidden" name="clasificacion" value="<?php echo $fila['clasificacion'];?>">
+                                        <button class="btn btn-outline-success btn-sm" type="submit" name="btninfo" id="btninfo">Info</button></form>
+                                    </div>
+                                </td>
+
+                            <?php } else if (isset($_SESSION['dniadmin'])  || isset($_SESSION['dnigerente'])){ ?> 
+
+                                <td>
+                                    <div class="d-sm-inline-block"><form action="form_editar_pieza.php" method="post">
+                                        <input type="hidden" name="id" value="<?php echo $fila['id'];$fila['clasificacion'];?>">
+                                        <button class="btn btn-outline-success btn-sm" type="submit" name="btneditarpieza" id="btneditarpieza">Edi pie</button></form>
+                                    </div>
+
+                                    <div class="d-sm-inline-block"><form action="form_editar_clasificacion.php" method="post">
+                                        <input type="hidden" name="id" value="<?php echo $fila['id'];?>">
+                                        <input type="hidden" name="clasificacion" value="<?php echo $fila['clasificacion'];?>">
+                                        <button class="btn btn-outline-success btn-sm" type="submit" name="btneditarclasi" id="btneditarclasi">Edi cla</button></form>
+                                    </div>
+                                </td>
 
 
-                            <td>
-                                <div class="d-sm-inline-block"><form action="form_eliminar_pieza.php" method="post">
-                                    <input type="hidden" name="id" value="<?php echo $fila['id']; $fila['clasificacion'];$fila['donante_id'];?>">
-                                    <button class="btn btn-outline-danger btn-sm" type="submit" name="btnborrar" id="btnborrar">Bor</button></form>
-                                </div>
+                                <td>
+                                    <div class="d-sm-inline-block"><form action="form_eliminar_pieza.php" method="post">
+                                        <input type="hidden" name="id" value="<?php echo $fila['id']; $fila['clasificacion'];$fila['donante_id'];?>">
+                                        <button class="btn btn-outline-danger btn-sm" type="submit" name="btnborrar" id="btnborrar">Bor</button></form>
+                                    </div>
 
- 
-                                <div class="d-sm-inline-block"><form action="info_clasificacion.php" method="post">
-                                    <input type="hidden" name="id" value="<?php echo $fila['id'];?>">
-                                    <input type="hidden" name="clasificacion" value="<?php echo $fila['clasificacion'];?>">
-                                    <button class="btn btn-outline-success btn-sm" type="submit" name="btninfo" id="btninfo">Info</button></form>
-                                </div>
-                            </td>
+                                    <div class="d-sm-inline-block"><form action="info_clasificacion.php" method="post">
+                                        <input type="hidden" name="id" value="<?php echo $fila['id'];?>">
+                                        <input type="hidden" name="clasificacion" value="<?php echo $fila['clasificacion'];?>">
+                                        <button class="btn btn-outline-success btn-sm" type="submit" name="btninfo" id="btninfo">Info</button></form>
+                                    </div>
+                                </td>
+
+                            <?php } ?>    
+
                         </tr>
 
                         <?php } ?>         
                     
                     </tbody>
+                    
         
                 </table>
             </div>
