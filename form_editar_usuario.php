@@ -75,17 +75,21 @@ $fila=mysqli_fetch_array($result);
 
                     <div class="col-sm-6">
                         <label for="clave" class="form-label">* Clave</label>
-                        <input type="text" class="form-control" name="clave" id="clave" placeholder="Editar Clave">
+                        <input type="password" class="form-control" name="clave" id="clave" placeholder="Editar Clave" value="<?php echo $fila['clave'];?>">
                     </div>
 
                     <div class="col-sm-6 mb-3"> 
                         <label for="tipo_usuario" class="form-label">* Tipo de Usuario</label>
-                        <input type="text" class="form-control" name="tipo_usuario" id="tipo_usuario" placeholder="Editar Tipo de Usuario" value="<?php echo $fila['tipo_usuario'];?>">
+                        <select class="form-select " aria-label="Default select example" name="tipo_usuario">
+                            <option selected disabled><?php echo $fila['tipo_usuario'];?></option>
+                            <option value="gerente">Gerente</option>
+                            <option value="administrador">Administrador</option>
+                        </select>
                     </div>
                     
                     <div class="col-12 text-center">
-                    <button type="submit" class="btn btn-primary btn-sm" name="btn_editar" id="editar">Actualizar</button>
-                    <a class="btn btn-primary btn-sm ms-2" href="listado_usuarios.php" role="button">Cancelar</a>
+                        <button type="submit" class="btn btn-primary btn-sm" name="btn_editar" id="editar">Actualizar</button>
+                        <a class="btn btn-primary btn-sm ms-2" href="listado_usuarios.php" role="button">Cancelar</a>
                     </div>
 
                 </form>

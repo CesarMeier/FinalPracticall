@@ -43,7 +43,9 @@ if (!isset($_GET["pg"])){
         ?>
             
         <section>
+            
             <div class="container text-center">
+                
                 <div class="text-center mt-5 mb-3"><h3>Listado de Usuarios</h3></div>
 
                 <div class="container "> 

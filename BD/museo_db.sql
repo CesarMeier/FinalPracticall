@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-07-2024 a las 23:11:42
+-- Tiempo de generación: 20-07-2024 a las 21:40:15
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 7.4.29
 
@@ -41,13 +41,6 @@ CREATE TABLE `arqueologia` (
   `pieza_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Volcado de datos para la tabla `arqueologia`
---
-
-INSERT INTO `arqueologia` (`ida`, `integridadHistorica`, `estetica`, `material`, `reino`, `clase`, `orden`, `familia`, `genero`, `especie`, `pieza_id`) VALUES
-(1, 'tjfjj', 'ryjrej', 'rtjdfr', 'hewhe', 'gfedjher', 'trjjjjjgr', 'edhtrh', 'rtjtrjgfd', 'djhgj', 8);
-
 -- --------------------------------------------------------
 
 --
@@ -80,16 +73,6 @@ CREATE TABLE `donante` (
   `apellido` varchar(45) DEFAULT NULL,
   `fecha` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `donante`
---
-
-INSERT INTO `donante` (`idd`, `nombre`, `apellido`, `fecha`) VALUES
-(8, 'luisna', 'meier', '2024-07-16'),
-(9, 'rty', 'gfdgf', '2024-07-17'),
-(10, 'dsydy', 'grdfgdrt', '2024-07-17'),
-(11, 'ftygjfg', 'djrtyj', '2024-07-17');
 
 -- --------------------------------------------------------
 
@@ -203,16 +186,6 @@ CREATE TABLE `pieza` (
   `usuario_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Volcado de datos para la tabla `pieza`
---
-
-INSERT INTO `pieza` (`id`, `numinventario`, `especie`, `estadoconservacion`, `fecha_ingreso`, `cantidadpiezas`, `clasificacion`, `observacion`, `donante_id`, `usuario_id`) VALUES
-(8, '425', 'asdsada', 'gdsfsd', '2024-07-16', '2', 'arqueologia', 'gsderfhe', 8, 20),
-(9, '145', 'rtdhdf', 'trhdfg', '2024-07-16', '6', 'paleontologia', 'tsydd', 9, 20),
-(10, '23', 'hdrgdrg', 'drghrt', '2024-07-08', '3', 'arqueologia', 'shdgfh', 10, 20),
-(11, '9', 'drtuj', 'dfjgjd', '2024-07-16', '3', 'arqueologia', 'hdgh', 11, 20);
-
 -- --------------------------------------------------------
 
 --
@@ -236,9 +209,8 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id`, `dni`, `nombre`, `apellido`, `telefono`, `email`, `clave`, `fecha_registro`, `tipo_usuario`) VALUES
-(18, '44135799', 'cesario', 'diaz', '3857435262', 'cesarmeier@gmail.com', '$2y$10$fh9PhJq185NF0H/8SMPsO..iNV8h2PayIHJglQ.aoddcZeHPHkVue', '2024-06-08', 'gerente'),
-(20, '44135797', 'cesar', 'diaz', '3857435262', 'cesarmeier@gmail.com', '$2y$10$kjtWAuBHqZoUeULYovluH.Jy9T0F4Y2km0mStjSH20r7wY.cy5NJi', '2024-06-05', 'administrador'),
-(21, '22333444', 'Cesar Oscar', 'Diaz Meier', '0385743526', 'cesar44135797@gmail.com', '$2y$10$Y/VgXxZOMFTKu8N3U9.gE.gYk79khrrEwygXLnMsNOh6ah44lLbo2', '2024-07-17', 'gerente');
+(10, '44135797', 'Cesar Oscar', 'Diaz Meier', '0385743526', 'cesar44135797@gmail.com', '$2y$10$ehcHlXCtF3BTilSbEMoKLObJrFz1ZLq3/7PaV1pIX8qrYnQAxX5ru', '2024-07-20', 'administrador'),
+(11, '44135798', 'Cesar Oscar', 'Diaz Meier', '0385743526', 'cesar44135797@gmail.com', '$2y$10$Td5osIv.XhkTOnXIAWF7NeqQz8t17keNoQx.79jqF1mTRfKn672Wi', '2024-07-20', 'gerente');
 
 -- --------------------------------------------------------
 
@@ -347,7 +319,7 @@ ALTER TABLE `zoologia`
 -- AUTO_INCREMENT de la tabla `arqueologia`
 --
 ALTER TABLE `arqueologia`
-  MODIFY `ida` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ida` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `botanica`
@@ -359,13 +331,13 @@ ALTER TABLE `botanica`
 -- AUTO_INCREMENT de la tabla `donante`
 --
 ALTER TABLE `donante`
-  MODIFY `idd` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `idd` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `geologia`
 --
 ALTER TABLE `geologia`
-  MODIFY `idg` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idg` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `ictiologia`
@@ -395,19 +367,19 @@ ALTER TABLE `paleontologia`
 -- AUTO_INCREMENT de la tabla `pieza`
 --
 ALTER TABLE `pieza`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `zoologia`
 --
 ALTER TABLE `zoologia`
-  MODIFY `idz` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idz` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas
