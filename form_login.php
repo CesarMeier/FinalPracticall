@@ -5,8 +5,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Formulario para Iniciar Sesion</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/style.css">
+        
     </head>
     <body>
 
@@ -27,8 +29,14 @@
 
                     <div class="mb-3">
                         <label for="clave" class="form-label">* Clave</label>
-                        <input type="password" name="clave" id="clave" class="form-control" aria-describedby="passwordHelpBlock" placeholder="Ingresa Contraseña">
-                    <div id="passwordHelpBlock" class="form-text"></div>
+                        <div class="input-group">
+                            <input type="password" name="clave" id="clave" class="form-control" aria-describedby="passwordHelpBlock" placeholder="Ingresa contraseña">
+                            <button class="btn btn-outline-secondary" type="button" id="boton-clave">
+                                <i class="fas fa-eye-slash"></i>
+                            </button>
+                        </div>
+                        <div id="passwordHelpBlock" class="form-text"></div>
+                    </div>
 
                     <div class="col-12 text-center">
                         <button type="submit" class="btn btn-primary btn-sm" name="btn_ingresar">Ingresar</button>
@@ -54,6 +62,7 @@
           include('footer.php');
         ?>
 
+        <script src="js/viewpass.js"></script>
         <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
         <script src="js/barra.js"></script>
 

@@ -27,12 +27,12 @@ if(!empty(trim($_POST['dni'])) && !empty(trim($_POST['nombre'])) && !empty(trim(
         $clave=password_hash($_POST['clave'], PASSWORD_DEFAULT);
 		
 		// Se arma la sentencia SQL de Actualización
-        $sql="UPDATE usuario SET dni='$dni',clave='$clave',nombre='$nombre',apellido='$apellido',telefono='$telefono',email='$email',fecha_registro='$fecha_registro',tipo_usuario='$tipo_usuario' WHERE id=$id";    
+        $sql="UPDATE usuario SET dni='$dni',nombre='$nombre',apellido='$apellido',telefono='$telefono',email='$email',clave='$clave',fecha_registro='$fecha_registro',tipo_usuario='$tipo_usuario' WHERE id=$id";    
 
         // Ejecuta la sentencia
         mysqli_query($conex,$sql);
 
-		echo $dni,$nombre,$apellido;
+		//echo $dni,$nombre,$apellido;
 
         //die($sql);
 		//echo $sql;

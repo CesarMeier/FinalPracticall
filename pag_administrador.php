@@ -6,7 +6,6 @@ if(!isset($_SESSION['dniadmin']) && !isset($_SESSION['dnigerente'])){
     }else if (isset($_SESSION['dnigerente'])){
         header("location:pag_gerente.php");
     }
-
 ?>
 
 <!DOCTYPE html>

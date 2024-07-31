@@ -3,10 +3,6 @@ session_start();
 require_once "conexion.php";
 require_once "fpaginacion.php";
 
-/*$sql="SELECT * FROM pieza,donante WHERE (donante.idd=pieza.donante_id)";
-
-$result=mysqli_query($conex,$sql);
-*/
 //Paginacion
 $cantidadregistrosmax=contar_registros($conex);
 
@@ -14,18 +10,15 @@ if (isset($_POST["clb"]) && !empty($_POST["clb"])){
     $valor=$_POST["clb"];
     $sql="SELECT * FROM pieza,donante WHERE (donante.idd=pieza.donante_id) and (pieza.especie like '%$valor%') ";
     $result=mysqli_query($conex,$sql);
-    
 } else {
-
-if (!isset($_GET["pg"])){
-    $pag=0;
-    $result=paginacion($conex, $pag);
-}else{
-    $pag=$_GET["pg"];
-    $result=paginacion($conex, $pag);
-}
+    if (!isset($_GET["pg"])){
+        $pag=0;
+        $result=paginacion($conex, $pag);
+    }else{
+        $pag=$_GET["pg"];
+        $result=paginacion($conex, $pag);
+    }
 };
-
 ?>
 
 <!DOCTYPE html>

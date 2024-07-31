@@ -72,7 +72,7 @@ $fila=mysqli_fetch_array($result);
                         <label for="email" class="form-label">* Email</label>
                         <input type="text" class="form-control" name="email" id="email" placeholder="Editar Email" value="<?php echo $fila['email'];?>">
                     </div>
-
+                    
                     <div class="col-sm-6">
                         <label for="clave" class="form-label">* Clave</label>
                         <input type="password" class="form-control" name="clave" id="clave" placeholder="Editar Clave" value="<?php echo $fila['clave'];?>">
@@ -113,6 +113,6 @@ $fila=mysqli_fetch_array($result);
 
         <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
         <script src="js/barra.js"></script>
-
+        
     </body>
 </html>

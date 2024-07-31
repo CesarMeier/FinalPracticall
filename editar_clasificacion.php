@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 require_once "conexion.php";
 require_once "funcionesval.php";
 
@@ -8,8 +7,6 @@ $error = "";
 
 $idpieza = $_POST['id'];
 $opcionSelec=$_POST['clasi'];
-
-
 
 $_SESSION['idp']=$idpieza;
 $_SESSION['clasificacion']=$opcionSelec;

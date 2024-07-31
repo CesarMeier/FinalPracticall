@@ -11,6 +11,7 @@ session_start();
         <title>Formulario Agregar un Usuario</title>
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     </head>
     <body>
 
@@ -65,7 +66,12 @@ session_start();
 
                     <div class="col-sm-6 mb-3">
                         <label for="clave" class="form-label">Clave</label>
-                        <input type="password" name="clave" id="clave" class="form-control" aria-describedby="passwordHelpBlock">
+                        <div class="input-group">
+                            <input type="password" name="clave" id="clave" class="form-control" aria-describedby="passwordHelpBlock" placeholder="Ingresa contraseña">
+                            <button class="btn btn-outline-secondary" type="button" id="boton-clave">
+                                <i class="fas fa-eye-slash"></i>
+                            </button>
+                        </div>
                         <div id="passwordHelpBlock" class="form-text"></div>
                     </div>
 
@@ -90,13 +96,11 @@ session_start();
             </div>
         </section>
 
-        
         <?php
           include('footer.php');
         ?>
 
-    
-
+        <script src="js/viewpass.js"></script>
         <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
         <script src="js/barra.js"></script>
 

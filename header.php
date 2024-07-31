@@ -27,10 +27,6 @@
                         <li class="nav-item">
                             <a class="nav-link text-white" href="form_login.php">Ingresar</a>
                         </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="form_registro.php">Registrar Usuario</a>
-                        </li>
                     </ul> 
 
                     <?php }else if (isset($_SESSION['dnigerente'])) { ?>

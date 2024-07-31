@@ -3,6 +3,11 @@ session_start();
 require_once "conexion.php";
 require_once "fpaginacion.php";
 
+if(!isset($_SESSION['dniadmin'])){
+    //echo $_SESSION['dni'];
+    header("location:index.php");
+}
+
 /*$sql="SELECT * FROM usuario ";
 
 $result=mysqli_query($conex,$sql);  
