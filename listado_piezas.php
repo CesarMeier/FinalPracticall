@@ -8,7 +8,7 @@ $cantidadregistrosmax=contar_registros($conex);
 
 if (isset($_POST["clb"]) && !empty($_POST["clb"])){
     $valor=$_POST["clb"];
-    $sql="SELECT * FROM pieza,donante WHERE (donante.idd=pieza.donante_id) and (pieza.especie like '%$valor%') ";
+    $sql="SELECT * FROM pieza,donante WHERE (donante.idd=pieza.donante_id) and ((pieza.numinventario like '%$valor%') or (pieza.especie like '%$valor%') or (pieza.estadoconservacion like '%$valor%') or (pieza.clasificacion like '%$valor%') or (pieza.observacion like '%$valor%') or (donante.nombre like '%$valor%') or (donante.apellido like '%$valor%'))";
     $result=mysqli_query($conex,$sql);
 } else {
     if (!isset($_GET["pg"])){
@@ -43,7 +43,7 @@ if (isset($_POST["clb"]) && !empty($_POST["clb"])){
                 
                 <div class="container ">
                     <form class="d-flex" role="search" method="post" action="">
-                        <input class="form-control me-2" type="search" placeholder="Buscar por especie" aria-label="Search" name="clb">
+                        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" name="clb">
                         <button class="btn btn-outline-success" type="submit" name="busqueda">Buscar</button>
                     </form>
                 </div>

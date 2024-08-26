@@ -29,10 +29,7 @@ $fila=mysqli_fetch_array($result);
     </head>
     <body>
 
-        <?php
-        include('header.php');
-        ?>
-            
+      
             <div class="container mt-2 mb-5">
 
                 <div class="card text-bg-light border-success text-center mt-5 mb-5">

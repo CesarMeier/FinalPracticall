@@ -73,7 +73,7 @@ $fila=mysqli_fetch_array($result);
                         <label for="estadoconservacion" class="form-label">* Estado de Conservacion</label>
                         <select class="form-select " aria-label="Default select example" name="estadoconservacion" id="estadoconservacion" >
                             <option selected ><?php echo $fila['estadoconservacion'];?></option>
-                            <option value="nueno">Bueno</option>
+                            <option value="bueno">Bueno</option>
                             <option value="muy bueno">Muy Bueno</option>
                             <option value="excelente">Excelente</option>
                             <option value="malo">Malo</option>

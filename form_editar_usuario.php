@@ -64,7 +64,7 @@ $fila=mysqli_fetch_array($result);
                     </div>
 
                     <div class="col-sm-6 mb-3">
-                        <label for="fecha_alta" class="form-label">* Fecha de Alta</label>
+                        <label for="fecha_registro" class="form-label">* Fecha de Alta</label>
                         <input type="date" class="form-control" name="fecha_registro" id="fecha_registro" placeholder="Ingresar Fecha de Alta" value="<?php echo $fila['fecha_registro'];?>">
                     </div>
 
@@ -74,14 +74,14 @@ $fila=mysqli_fetch_array($result);
                     </div>
                     
                     <div class="col-sm-6">
-                        <label for="clave" class="form-label">* Clave</label>
-                        <input type="password" class="form-control" name="clave" id="clave" placeholder="Editar Clave" value="<?php echo $fila['clave'];?>">
+                        <label for="clave" class="form-label">Es</label>
+                        <input type="password" class="form-control" name="clave" id="clave" placeholder="Editar Clave">
                     </div>
 
                     <div class="col-sm-6 mb-3"> 
                         <label for="tipo_usuario" class="form-label">* Tipo de Usuario</label>
                         <select class="form-select " aria-label="Default select example" name="tipo_usuario">
-                            <option selected disabled><?php echo $fila['tipo_usuario'];?></option>
+                            <option selected><?php echo $fila['tipo_usuario'];?></option>
                             <option value="gerente">Gerente</option>
                             <option value="administrador">Administrador</option>
                         </select>
