@@ -29,9 +29,7 @@ if(!isset($_SESSION['dnigerente'])&& !isset($_SESSION['dniadmin'])){
 
             <div class="container">
                 <div class="row ms-5">
-
-                    <h2 class="text-center">Bienvenido Gerente</h2>
-                    <div class="col-2"></div>
+                    <h2 class="text-center bienvenido">Bienvenido Gerente <?php echo $_SESSION['nombregerente']." ".$_SESSION['apellidogerente'] ?> !!</h2>
                     
                     <div class="col-8">
                         <div id="carouselExample" class="carousel slide">

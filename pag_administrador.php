@@ -20,19 +20,14 @@ if(!isset($_SESSION['dniadmin']) && !isset($_SESSION['dnigerente'])){
     </head>
     <body>
 
-        <?php
-        include('header.php');
-        ?>
+        <?php include('header.php'); ?>
 
         <section>
 
-        <div class="container">
-                <div  class="titulo_admi"> 
-                    <p class="">Bienvenido Administrador <?php echo $_SESSION['nombreadministrador']." ".$_SESSION['apellidoadministrador'] ?>
-                    !!</p>
-                </div>
+            <div class="container">
+                <p class="text-center">Bienvenido Administrador <?php echo $_SESSION['nombreadministrador']." ".$_SESSION['apellidoadministrador'] ?> !!</p>
                 
-                <div class="carousel col-10 ">
+                <div class="carousel">
                     <div id="carouselExampleCaptions" class="carousel slide">
                         <div class="carousel-indicators">
                             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -79,11 +74,8 @@ if(!isset($_SESSION['dniadmin']) && !isset($_SESSION['dnigerente'])){
                             <span class="visually-hidden">Next</span>
                         </button>
                     </div>
-                    
                 </div>  
             </div>     
-   
-
         </section>
 
         <?php

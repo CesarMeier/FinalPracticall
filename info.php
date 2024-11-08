@@ -47,54 +47,42 @@
         </section>
 
 <section class="info"> 
-
-<div class="contacto">
-    <article>
+    <div class="contacto">
         <h2 class="textform">Contactate con nosotros!</h2>
         <form name="form" action="" method="post">
-        <fieldset class="fieldset">
+            <div class="mb-3">
+                <input type="text" class="form-control"  name="nombyape" id="nombyape" placeholder="Nombre y Apellido">
+            </div>
 
-        <div class="input-group">
-            <label class="label">Nombre y Apellido:</label>
-            <input type="text" name="nombyape" id="nombyape" class="input" >
-        <div></div></div>
+            <div class="mb-3">
+                <input type="email" class="form-control" name="email" id="exampleFormControlInput1" placeholder="name@example.com">
+            </div>
 
-        <div class="input-group">
-            <label class="label">Email:</label>
-            <input type="text" name="email" id="email" class="input">
-        <div></div></div>
+            <div class="mb-3">
+                <input type="text" class="form-control"  name="celular" id="celular" placeholder="Celular">
+            </div>
 
-        <div class="input-group">
-            <label class="label">Celular:</label>
-            <input type="" autocomplete="off" name="celular" id="Celular" class="input">
-        <div></div></div>
+            <div class="mb-3">
+                <input type="text" class="form-control"  name="mensaje" id="mensaje" placeholder="Escriba aqui su mensaje">
+            </div>
 
-        <div class="input-group">
-            <label class="label">Mensaje:</label>
-            <textarea name="comentario" id="comentario" placeholder="Escriba aqui su mensaje" cols="25" rows="10" ></textarea>
-        </div>
-
-        <button type="submit" name="btn_submit" class="enviar">Enviar</button>
-
-        </fieldset>
+            <button type="submit" name="btn_submit" class="enviar">Enviar</button>
         </form>
-    </article>
-</div>
-
-<div class="redes">
-    <h4>Nuestras redes  sociales:</h4>
-    <i class="fa-brands fa-instagram"></i> Instagram: museocsnaturales
-    <br>
-    <i class="fa-brands fa-facebook"></i> Facebook: Museo de Ciencias Naturales
-    <br>
-    <i class="fa-regular fa-at"></i> Gmail: museociencia@yahoo.com
-    <br>
-    <br>
-    <h4>Números de telefonos:</h4>
-    <i class="fa-solid fa-phone-volume"></i> Telefono: 3408-577548
-    <br>
-    <i class="fa-brands fa-whatsapp"></i> Whatsapp: 3408-010101
-</div>
+    </div>
 
 
+    <div class="redes">
+        <h4>Nuestras redes  sociales:</h4>
+        <i class="fa-brands fa-instagram"></i> Instagram: museocsnaturales
+        <br>
+        <i class="fa-brands fa-facebook"></i> Facebook: Museo de Ciencias Naturales
+        <br>
+        <i class="fa-regular fa-at"></i> Gmail: museociencia@yahoo.com
+        <br>
+        <br>
+        <h4>Números de telefonos:</h4>
+        <i class="fa-solid fa-phone-volume"></i> Telefono: 3408-577548
+        <br>
+        <i class="fa-brands fa-whatsapp"></i> Whatsapp: 3408-010101
+    </div>
 </section>

@@ -16,7 +16,7 @@ $cantidadregistrosmax=contar_registros_usuario($conex);
 
 if (isset($_POST["clb"]) && !empty($_POST["clb"])){
     $valor=$_POST["clb"];
-    $sql="SELECT * FROM usuario WHERE (usuario.dni like '%$valor%') ";
+    $sql="SELECT * FROM usuario WHERE ((usuario.dni like '%$valor%') or (usuario.nombre like '%$valor%') or (usuario.apellido like '%$valor%') or (usuario.telefono like '%$valor%') or (usuario.email like '%$valor%') or (usuario.tipo_usuario like '%$valor%'))";
     $result=mysqli_query($conex,$sql);
     
 } else {
@@ -55,7 +55,7 @@ if (!isset($_GET["pg"])){
 
                 <div class="container "> 
                     <form class="d-flex" role="search" method="post" action="">
-                        <input class="form-control me-2" type="search" placeholder="Buscar por Documento" aria-label="Search" name="clb">
+                        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" name="clb">
                         <button class="btn btn-outline-success" type="submit" name="busqueda">Buscar</button>
                     </form>
                 </div>
@@ -88,6 +88,11 @@ if (!isset($_GET["pg"])){
                             <td><?php echo $fila["tipo_usuario"]; ?></td>
 
                             <td>
+                                <div class="d-sm-inline-block"><form action="form_editar_clave.php" method="post">
+                                    <input type="hidden" name="id" value="<?php echo $fila['id'];?>">
+                                    <button class="btn btn-outline-success btn-sm" type="submit" name="btneditarclave" id="btneditarclave">Clave</button></form>
+                                </div>
+
                                 <div class="d-sm-inline-block"><form action="form_editar_usuario.php" method="post">
                                     <input type="hidden" name="id" value="<?php echo $fila['id'];?>">
                                     <button class="btn btn-outline-success btn-sm" type="submit" name="btneditar" id="btneditar">Editar</button></form>

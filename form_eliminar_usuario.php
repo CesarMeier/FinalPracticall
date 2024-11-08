@@ -63,9 +63,9 @@ $fila=mysqli_fetch_array($result);
 						<input type="text" class="form-control" name="apellido" id="apellido" placeholder="" value="<?php echo $fila['email'];?>" disabled>
 					</div>
 					
-					<div class="col-12 text-secondary text-center mt-4"><h5>¿Confirma la eliminación de este usuario?</a></h5>
+					<div class="col-12 text-success text-center mt-4"><h5>¿Confirma la eliminación de este usuario?</a></h5>
 						<div class="text-center mt-0"><button type="submit" class="btn btn-primary btn-sm" name="btnborrar" id="btnborrar">Eliminar</button>
-						<a class="btn btn-primary btn-sm" href="listado_usuarios.php" role="button">Cancelar</a></div>	
+						<a class="btn btn-danger btn-sm" href="listado_usuarios.php" role="button">Cancelar</a></div>	
 					</div>
 				
 				</form>

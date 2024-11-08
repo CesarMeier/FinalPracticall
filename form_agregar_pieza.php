@@ -100,8 +100,8 @@ $fila=mysqli_fetch_array($result);
                     </div>
 
                     <div class="col-12 text-center">
-                        <button type="submit" class="btn btn-primary btn-sm" name="btn_agregar" id="agregar">Agregar</button>
-                        <a class="btn btn-primary btn-sm ms-2" href="listado_piezas.php" role="button">Cancelar</a>
+                        <button type="button" class="btn btn-primary" onclick="window.location.href='form_agregar_clasificacion.php';">Agregar Clasificación</button>
+                        <a class="btn btn-danger btn-sm ms-2" href="listado_piezas.php" role="button">Cancelar</a>
                     </div>
 
                 </form>

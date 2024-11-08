@@ -79,7 +79,7 @@ $fila=mysqli_fetch_array($result);
 
                     <div class="col-12 text-secondary text-center mt-4"><h5>¿Confirma la eliminación de esta pieza?</a></h5>
                         <div class="text-center mt-0"><button type="submit" class="btn btn-primary btn-sm" name="btnborrar" id="btnborrar">Eliminar</button>
-                        <a class="btn btn-primary btn-sm" href="listado_piezas.php" role="button">Cancelar</a></div>	
+                        <a class="btn btn-danger btn-sm" href="listado_piezas.php" role="button">Cancelar</a></div>	
                     </div>
 
                 </form>

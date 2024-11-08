@@ -190,8 +190,8 @@ $fila=mysqli_fetch_array($result);
                     <?php }; ?>
 
                     <div class="col-12 text-center">
-                        <button type="submit" class="btn btn-primary btn-sm" name="btn_editar_clasificacion" id="editar_clasificacion">Actualizar</button>
-                        <a class="btn btn-primary btn-sm ms-2" href="listado_piezas.php" role="button">Cancelar</a>
+                        <button type="submit" class="btn btn-success btn-sm" name="btn_editar_clasificacion" id="editar_clasificacion">Actualizar</button>
+                        <a class="btn btn-danger btn-sm ms-2" href="listado_piezas.php" role="button">Cancelar</a>
                     </div>
 
                 </form>

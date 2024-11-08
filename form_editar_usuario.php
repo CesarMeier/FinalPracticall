@@ -44,52 +44,47 @@ $fila=mysqli_fetch_array($result);
                     <input type="hidden" class="form-control" name="id" id="id" value="<?php echo $fila['id'];?>">
 
                     <div class="col-sm-6 mb-3">
-                        <label for="nombre" class="form-label">* Nombre</label>
+                        <label for="nombre" class="form-label">Nombre</label>
                         <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre" value="<?php echo $fila['nombre'];?>">
                     </div>
 
                     <div class="col-sm-6">
-                        <label for="apellido" class="form-label">* Apellido</label>
+                        <label for="apellido" class="form-label">Apellido</label>
                         <input type="text" class="form-control" name="apellido" id="apellido" placeholder="Editar Apellido" value="<?php echo $fila['apellido'];?>">
                     </div>
 
                     <div class="col-sm-6">
-                        <label for="telefono" class="form-label">* Telefono</label>
+                        <label for="telefono" class="form-label">Telefono</label>
                         <input type="text" class="form-control" name="telefono" id="telefono" placeholder="Editar Telefono" value="<?php echo $fila['telefono'];?>">
                     </div>
 
                     <div class="col-sm-6">
-                        <label for="dni" class="form-label">* DNI</label>
+                        <label for="dni" class="form-label">DNI</label>
                         <input type="text" class="form-control" name="dni" id="dni" placeholder="DNI" value="<?php echo $fila['dni'];?>">
                     </div>
 
                     <div class="col-sm-6 mb-3">
-                        <label for="fecha_alta" class="form-label">* Fecha de Alta</label>
+                        <label for="fecha_registro" class="form-label">Fecha de Alta</label>
                         <input type="date" class="form-control" name="fecha_registro" id="fecha_registro" placeholder="Ingresar Fecha de Alta" value="<?php echo $fila['fecha_registro'];?>">
                     </div>
 
                     <div class="col-sm-6">
-                        <label for="email" class="form-label">* Email</label>
+                        <label for="email" class="form-label">Email</label>
                         <input type="text" class="form-control" name="email" id="email" placeholder="Editar Email" value="<?php echo $fila['email'];?>">
-                    </div>
-                    
-                    <div class="col-sm-6">
-                        <label for="clave" class="form-label">* Clave</label>
-                        <input type="password" class="form-control" name="clave" id="clave" placeholder="Editar Clave" value="<?php echo $fila['clave'];?>">
                     </div>
 
                     <div class="col-sm-6 mb-3"> 
-                        <label for="tipo_usuario" class="form-label">* Tipo de Usuario</label>
+                        <label for="tipo_usuario" class="form-label">Tipo de Usuario</label>
                         <select class="form-select " aria-label="Default select example" name="tipo_usuario">
-                            <option selected disabled><?php echo $fila['tipo_usuario'];?></option>
+                            <option selected><?php echo $fila['tipo_usuario'];?></option>
                             <option value="gerente">Gerente</option>
                             <option value="administrador">Administrador</option>
                         </select>
                     </div>
                     
                     <div class="col-12 text-center">
-                        <button type="submit" class="btn btn-primary btn-sm" name="btn_editar" id="editar">Actualizar</button>
-                        <a class="btn btn-primary btn-sm ms-2" href="listado_usuarios.php" role="button">Cancelar</a>
+                        <button type="submit" class="btn btn-success btn-sm" name="btn_editar" id="editar">Actualizar</button>
+                        <a class="btn btn-danger btn-sm ms-2" href="listado_usuarios.php" role="button">Cancelar</a>
                     </div>
 
                 </form>

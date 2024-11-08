@@ -62,9 +62,9 @@ if (isset($_POST["clb"]) && !empty($_POST["clb"])){
                             <th scope="col">Clasificacion</th>
                             <th scope="col">Observacion</th>
                             <th scope="col">Donante</th>
-                            <th scope="col">Acciones</th>
+                            <th scope="col">Edicion</th>
                             <?php if (isset($_SESSION['dniadmin'])  || isset($_SESSION['dnigerente'])){ ?> 
-                            <th scope="col">edicion</th>
+                            <th scope="col">Accion</th>
                             <?php  }  ?> 
                         </tr>
                     </thead>
@@ -102,13 +102,13 @@ if (isset($_POST["clb"]) && !empty($_POST["clb"])){
                                 <td>
                                     <div class="d-sm-inline-block"><form action="form_editar_pieza.php" method="post">
                                         <input type="hidden" name="id" value="<?php echo $fila['id'];$fila['clasificacion'];?>">
-                                        <button class="btn btn-outline-success btn-sm" type="submit" name="btneditarpieza" id="btneditarpieza">Edi pie</button></form>
+                                        <button class="btn btn-outline-success btn-sm" type="submit" name="btneditarpieza" id="btneditarpieza">Pieza</button></form>
                                     </div>
 
                                     <div class="d-sm-inline-block"><form action="form_editar_clasificacion.php" method="post">
                                         <input type="hidden" name="id" value="<?php echo $fila['id'];?>">
                                         <input type="hidden" name="clasificacion" value="<?php echo $fila['clasificacion'];?>">
-                                        <button class="btn btn-outline-success btn-sm" type="submit" name="btneditarclasi" id="btneditarclasi">Edi cla</button></form>
+                                        <button class="btn btn-outline-success btn-sm" type="submit" name="btneditarclasi" id="btneditarclasi">Clasif</button></form>
                                     </div>
                                 </td>
 
@@ -116,13 +116,13 @@ if (isset($_POST["clb"]) && !empty($_POST["clb"])){
                                 <td>
                                     <div class="d-sm-inline-block"><form action="form_eliminar_pieza.php" method="post">
                                         <input type="hidden" name="id" value="<?php echo $fila['id']; $fila['clasificacion'];$fila['donante_id'];?>">
-                                        <button class="btn btn-outline-danger btn-sm" type="submit" name="btnborrar" id="btnborrar">Bor</button></form>
+                                        <button class="btn btn-outline-danger btn-sm" type="submit" name="btnborrar" id="btnborrar">Borrar</button></form>
                                     </div>
 
                                     <div class="d-sm-inline-block"><form action="info_clasificacion.php" method="post">
                                         <input type="hidden" name="id" value="<?php echo $fila['id'];?>">
                                         <input type="hidden" name="clasificacion" value="<?php echo $fila['clasificacion'];?>">
-                                        <button class="btn btn-outline-success btn-sm" type="submit" name="btninfo" id="btninfo">Info</button></form>
+                                        <button class="btn btn-outline-info btn-sm" type="submit" name="btninfo" id="btninfo">Info</button></form>
                                     </div>
                                 </td>
 
@@ -173,9 +173,19 @@ if (isset($_POST["clb"]) && !empty($_POST["clb"])){
             <?php
             }else{
                 echo "</table></div>";
-                echo "<div class='container text-center lead my-3 py-3'><div class='alert alert-danger my-5 py-4'><p><em>No existen Piezas! </em><a href='index.php' class='text-primary lead ms-2'>Volver</a></p></div></div>";
+            ?> 
+            <div class="container text-center lead my-3 py-3">
+                <div class="alert alert-dark my-5 py-4">
+                    <p><em>No existen Piezas! </em></p>
+                    <!-- Botón que redirige a 'form_agregar_pieza.php' -->
+                    <a href="form_agregar_pieza.php" class="btn btn-success btn-lg ms-2">Cargar la primera</a>
+                </div>
+            </div>          
+            <?php
             }
             ?>  
+
+
         
         </section>    
 
