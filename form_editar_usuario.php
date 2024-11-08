@@ -64,13 +64,18 @@ $fila=mysqli_fetch_array($result);
                     </div>
 
                     <div class="col-sm-6 mb-3">
-                        <label for="fecha_registro" class="form-label">Fecha de Alta</label>
+                        <label for="fecha_alta" class="form-label">* Fecha de Alta</label>
                         <input type="date" class="form-control" name="fecha_registro" id="fecha_registro" placeholder="Ingresar Fecha de Alta" value="<?php echo $fila['fecha_registro'];?>">
                     </div>
 
                     <div class="col-sm-6">
                         <label for="email" class="form-label">Email</label>
                         <input type="text" class="form-control" name="email" id="email" placeholder="Editar Email" value="<?php echo $fila['email'];?>">
+                    </div>
+                    
+                    <div class="col-sm-6">
+                        <label for="clave" class="form-label">* Clave</label>
+                        <input type="password" class="form-control" name="clave" id="clave" placeholder="Editar Clave" value="<?php echo $fila['clave'];?>">
                     </div>
 
                     <div class="col-sm-6 mb-3"> 

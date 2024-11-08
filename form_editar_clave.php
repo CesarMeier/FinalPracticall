@@ -49,8 +49,13 @@ $fila=mysqli_fetch_array($result);
                     </div>
 
                     <div class="col-12 text-center">
+<<<<<<< HEAD
                         <button type="submit" class="btn btn-success btn-sm" name="btn_editar" id="editar">Actualizar</button>
                         <a class="btn btn-danger btn-sm ms-2" href="listado_usuarios.php" role="button">Cancelar</a>
+=======
+                        <button type="submit" class="btn btn-primary btn-sm" name="btn_editar" id="editar">Actualizar</button>
+                        <a class="btn btn-primary btn-sm ms-2" href="listado_usuarios.php" role="button">Cancelar</a>
+>>>>>>> f69a4256730e761f3f9525f22252fa47f68f0851
                     </div>
 
                 </form>
