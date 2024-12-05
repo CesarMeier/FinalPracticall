@@ -78,7 +78,7 @@ if (isset($idpieza) && !empty($idpieza) && isset($opcionSelec) && !empty($opcion
                 mysqli_query($conex,$sql);
             break;
 
-            case "oologia";
+            case "oologia":
                 $sql="Delete from oologia where ido=".$fila['ido'];
                 mysqli_query($conex,$sql);
                 $sql="Delete from pieza where id=$idpieza";
