@@ -16,7 +16,7 @@ if (isset($idpieza) && !empty($idpieza) && isset($opcionSelec) && !empty($opcion
 
         switch($opcionSelec){
             case "zoologia":
-                $sql="Delete from zoologia where idz".$fila['idz'];
+                $sql="Delete from zoologia where idz=".$fila['idz'];
                 mysqli_query($conex,$sql);
                 $sql="Delete from pieza where id=$idpieza";
                 mysqli_query($conex,$sql);
@@ -25,7 +25,7 @@ if (isset($idpieza) && !empty($idpieza) && isset($opcionSelec) && !empty($opcion
             break;
 
             case "botanica":
-                $sql="Delete from botanica where idb".$fila['idb'];
+                $sql="Delete from botanica where idb=".$fila['idb'];
                 mysqli_query($conex,$sql);
                 $sql="Delete from pieza where id=$idpieza";
                 mysqli_query($conex,$sql);
@@ -34,7 +34,7 @@ if (isset($idpieza) && !empty($idpieza) && isset($opcionSelec) && !empty($opcion
             break;
 
             case "paleontologia":
-                $sql="Delete from paleontologia where idp".$fila['idp'];
+                $sql="Delete from paleontologia where idp=".$fila['idp'];
                 mysqli_query($conex,$sql);
                 $sql="Delete from pieza where id=$idpieza";
                 mysqli_query($conex,$sql);
@@ -43,7 +43,7 @@ if (isset($idpieza) && !empty($idpieza) && isset($opcionSelec) && !empty($opcion
             break;
 
             case "arqueologia":
-                $sql="Delete from arqueologia where ida".$fila['ida'];
+                $sql="Delete from arqueologia where ida=".$fila['ida'];
                 mysqli_query($conex,$sql);
                 $sql="Delete from pieza where id=$idpieza";
                 mysqli_query($conex,$sql);
@@ -52,7 +52,7 @@ if (isset($idpieza) && !empty($idpieza) && isset($opcionSelec) && !empty($opcion
             break;
 
             case "osteologia":
-                $sql="Delete from osteologia where idos".$fila['idos'];
+                $sql="Delete from osteologia where idos=".$fila['idos'];
                 mysqli_query($conex,$sql);
                 $sql="Delete from pieza where id=$idpieza";
                 mysqli_query($conex,$sql);
@@ -61,7 +61,7 @@ if (isset($idpieza) && !empty($idpieza) && isset($opcionSelec) && !empty($opcion
             break;
 
             case "geologia":
-                $sql="Delete from geologia where idg".$fila['idg'];
+                $sql="Delete from geologia where idg=".$fila['idg'];
                 mysqli_query($conex,$sql);
                 $sql="Delete from pieza where id=$idpieza";
                 mysqli_query($conex,$sql);
@@ -70,7 +70,7 @@ if (isset($idpieza) && !empty($idpieza) && isset($opcionSelec) && !empty($opcion
             break;
 
             case "ictiologia":
-                $sql="Delete from ictiologia where idi".$fila['idi'];
+                $sql="Delete from ictiologia where idi=".$fila['idi'];
                 mysqli_query($conex,$sql);
                 $sql="Delete from pieza where id=$idpieza";
                 mysqli_query($conex,$sql);
@@ -79,7 +79,7 @@ if (isset($idpieza) && !empty($idpieza) && isset($opcionSelec) && !empty($opcion
             break;
 
             case "oologia";
-                $sql="Delete from oologia where ido".$fila['ido'];
+                $sql="Delete from oologia where ido=".$fila['ido'];
                 mysqli_query($conex,$sql);
                 $sql="Delete from pieza where id=$idpieza";
                 mysqli_query($conex,$sql);

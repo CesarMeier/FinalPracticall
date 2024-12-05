@@ -100,7 +100,7 @@ $fila=mysqli_fetch_array($result);
                     </div>
 
                     <div class="col-12 text-center">
-                        <button type="button" class="btn btn-primary" onclick="window.location.href='form_agregar_clasificacion.php';">Agregar Clasificación</button>
+                        <button type="submit" class="btn btn-success btn-sm" name="btn_agregar" id="agregar">Agregar</button>
                         <a class="btn btn-danger btn-sm ms-2" href="listado_piezas.php" role="button">Cancelar</a>
                     </div>
 
@@ -112,7 +112,7 @@ $fila=mysqli_fetch_array($result);
                     if($_GET["mensaje"]!="ok"){
                         echo "<div class='text-center mt-4 mb-5'><div class='alert alert-danger' role='alert'><strong>".$_GET["mensaje"]."</strong></div></div>"; 
                     }else{
-                        echo "<div class='text-center mt-4 mb-5'><div class='alert alert-success' role='alert'><strong>Pieza exitosamente agregada!</strong><a href='form_agregar_clasificacion.php' class='text-primary ms-3'>Siguiente formulario</a></div></div>";  
+                        echo "<div class='text-center mt-4 mb-5'><div class='alert alert-success' role='alert'><strong>Agregar detalles de clasificacion aqui!</strong><a href='form_agregar_clasificacion.php' class='text-primary ms-3'>Siguiente formulario</a></div></div>";  
                     }  
                 } 
                 ?> 
