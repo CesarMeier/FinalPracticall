@@ -1,5 +1,9 @@
 <?php
 session_start();
+if (!isset($_SESSION['dniadmin']) && !isset($_SESSION['dnigerente'])) {
+    header("Location: index.php");
+exit();
+}
 
 // Conexion a la BD
 require_once "conexion.php";

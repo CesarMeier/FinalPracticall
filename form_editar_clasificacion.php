@@ -1,11 +1,14 @@
 <?php
 session_start();
-
+if (!isset($_SESSION['dniadmin']) && !isset($_SESSION['dnigerente'])) {
+    header("Location: index.php");
+    exit();
+}
 require_once "conexion.php";
 
 if (!isset($_GET['msje'])){
-  $id=$_POST['id'];
-  $opcionSelec=$_POST['clasificacion'];
+    $id=$_POST['id'];
+    $opcionSelec=$_POST['clasificacion'];
 }else{
     $id=$_SESSION['idp'];
     $opcionSelec=$_SESSION['clasificacion'];

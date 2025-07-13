@@ -10,7 +10,7 @@
                             <div class=" card-header">
                                 <span class="material-symbols-outlined">distance</span>
                                 <h5>Ubicacion</h5>
-                             </div>
+                            </div>
                             <div class="card-body">
                                 <h5 class="card-title">Lassaga e Hipolito Yrigoyen</h5>
                                 <p class="card-text">San Cristobal, Santa Fe</p>
@@ -23,7 +23,7 @@
                             <div class=" card-header">
                             <span class="material-symbols-outlined">schedule</span>
                                 <h5>Horarios</h5>
-                             </div>
+                            </div>
                             <div class="card-body">
                                 <h5 class="card-title">Martes a Jueves</h5>
                                 <p class="card-text">De 19:00hs a 21:00hs</p>
@@ -36,7 +36,7 @@
                             <div class=" card-header">
                             <span class="material-symbols-outlined">local_activity</span>
                                 <h5>Exposiciones</h5>
-                             </div>
+                            </div>
                             <div class="card-body">
                                 <h5 class="card-title">Expo-Zoologia </h5>
                                 <p class="card-text">20 de Octubre, 20hs</p>

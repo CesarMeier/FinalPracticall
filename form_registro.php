@@ -1,5 +1,9 @@
 <?php
 session_start();
+if (!isset($_SESSION['dniadmin']) && !isset($_SESSION['dnigerente'])) {
+    header("Location: index.php");
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -36,7 +40,7 @@ session_start();
                     </div>
 
                     <div class="col-sm-6 mb-3">
-                       <label for="telefono" class="form-label">Telefono</label>
+                        <label for="telefono" class="form-label">Telefono</label>
                         <input type="text" class="form-control" name="telefono" id="telefono" placeholder="">    
                     </div>
 
@@ -97,7 +101,7 @@ session_start();
         </section>
 
         <?php
-          include('footer.php');
+        include('footer.php');
         ?>
 
         <script src="js/viewpass.js"></script>

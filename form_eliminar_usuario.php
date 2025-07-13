@@ -1,6 +1,9 @@
 <?php
 session_start();
-
+if (!isset($_SESSION['dniadmin']) && !isset($_SESSION['dnigerente'])) {
+    header("Location: index.php");
+    exit();
+}
 require_once "conexion.php";
 
 if (!isset($_GET['msje'])){

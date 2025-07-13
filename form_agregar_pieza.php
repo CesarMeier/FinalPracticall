@@ -1,6 +1,9 @@
 <?php
 session_start();
-
+if (!isset($_SESSION['dniadmin']) && !isset($_SESSION['dnigerente'])) {
+    header("Location: index.php");
+    exit();
+}
 require_once "conexion.php";
 
 $sql="SELECT donante.* FROM donante";
@@ -126,7 +129,7 @@ $fila=mysqli_fetch_array($result);
         </section>
 
         <?php
-          include('footer.php');
+        include('footer.php');
         ?>
         
         <script src="bootstrap/js/bootstrap.bundle.min.js"></script>

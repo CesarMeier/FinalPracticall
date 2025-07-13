@@ -1,5 +1,5 @@
 <?php
-session_start(); // Agregá esto al principio
+session_start();
 require_once "conexion.php";
 
 $id = $_POST['id'];
@@ -11,11 +11,19 @@ $fila = mysqli_fetch_array($result);
 ?>
 
 <?php if (isset($_SESSION['dniadmin']) || isset($_SESSION['dnigerente'])): ?>
-    <form action="generar_pdf.php" method="get" target="_blank" class="mb-3">
-        <input type="hidden" name="id" value="<?php echo $fila['id']; ?>">
-        <input type="hidden" name="clasificacion" value="<?php echo $fila['clasificacion']; ?>">
-        <button type="submit" class="btn btn-danger btn-sm">📄 Generar PDF</button>
-    </form>
+    <div class="d-flex flex-wrap justify-content-start gap-2 mb-3">
+        <!-- Botón de Generar PDF -->
+        <form action="generar_pdf.php" method="get" target="_blank">
+            <input type="hidden" name="id" value="<?php echo $fila['id']; ?>">
+            <input type="hidden" name="clasificacion" value="<?php echo $fila['clasificacion']; ?>">
+            <button type="submit" class="btn btn-danger btn-sm">📄 Generar PDF</button>
+        </form>
+
+        <!-- Botón de Seguimiento de Cargas solo para admin -->
+        <?php if (isset($_SESSION['dniadmin'])): ?>
+            <a href="seguimiento_carga.php" class="btn btn-outline-success btn-sm">📊 Seguimiento de Cargas</a>
+        <?php endif; ?>
+    </div>
 <?php endif; ?>
 
 <div class="text-center">
