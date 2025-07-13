@@ -14,14 +14,32 @@ if(!empty(trim($_POST['nombre'])) && !empty(trim($_POST['apellido'])) && !empty(
 		$fecha = date("Y/m/d");
 		
 		$sql="INSERT INTO donante(nombre,apellido,fecha) VALUES('$nombre','$apellido','$fecha')";
-
         $result=mysqli_query($conex,$sql);
 
 		//Inserta los datos de la pieza
 		if ($result){
 			$ultimoid=mysqli_insert_id($conex);
-		
-			$sql = "INSERT INTO pieza(numinventario,especie,estadoconservacion,fecha_ingreso,cantidadpiezas,clasificacion,observacion,donante_id,usuario_id) VALUES ('" . $_POST['numinventario'] . "','" . $_POST['especie'] . "','" . $_POST['estadoconservacion'] . "','" . $_POST['fecha_ingreso'] . "'," . $_POST['cantidadpiezas'] . ",'" . $_POST['clasificacion'] . "','" . $_POST['observacion'] . "'," . $ultimoid . "," . $_SESSION['id_usu'] . ")";
+
+			// Subir imagen
+			$imagenRuta = '';
+			if (isset($_FILES['imagen']) && $_FILES['imagen']['error'] === 0) {
+				$nombreImagen = basename($_FILES['imagen']['name']);
+				$rutaTemporal = $_FILES['imagen']['tmp_name'];
+				$imagenRuta = 'imagenes/' . $nombreImagen;
+
+				if (!file_exists('imagenes')) {
+					mkdir('imagenes', 0777, true);
+				}
+
+				if (!move_uploaded_file($rutaTemporal, $imagenRuta)) {
+					$error .= "Error al guardar la imagen. ";
+					$imagenRuta = ''; // vacía para evitar errores en SQL
+				}
+			} else {
+				$error .= "No se cargó imagen. ";
+			}
+
+			$sql = "INSERT INTO pieza(numinventario,especie,estadoconservacion,fecha_ingreso,cantidadpiezas,clasificacion,observacion,imagen,donante_id,usuario_id) VALUES ('" . $_POST['numinventario'] . "','" . $_POST['especie'] . "','" . $_POST['estadoconservacion'] . "','" . $_POST['fecha_ingreso'] . "','" . $_POST['cantidadpiezas'] . "','" . $_POST['clasificacion'] . "','" . $_POST['observacion'] . "','" . $imagenRuta . "','" . $ultimoid . "','" . $_SESSION['id_usu'] . "')";
 
 			$result=mysqli_query($conex,$sql);
 

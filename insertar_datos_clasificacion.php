@@ -27,7 +27,7 @@ if (ValidacionDatos()){
             
             $phylum= $_POST['phylum'];
 
-             $sql="INSERT INTO zoologia(distribucion,reino,phylum,clase,orden,familia,genero,especie,pieza_id) VALUES('$distribucion','$reino','$phylum','$clase','$orden','$familia','$genero','$especie',$idpieza)";
+            $sql="INSERT INTO zoologia(distribucion,reino,phylum,clase,orden,familia,genero,especie,pieza_id) VALUES('$distribucion','$reino','$phylum','$clase','$orden','$familia','$genero','$especie',$idpieza)";
         break;
 
         case "botanica":

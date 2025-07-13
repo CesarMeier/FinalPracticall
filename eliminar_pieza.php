@@ -14,6 +14,16 @@ if (isset($idpieza) && !empty($idpieza) && isset($opcionSelec) && !empty($opcion
     if ($result) {
         $fila = mysqli_fetch_array($result);
 
+        // Obtener la ruta de la imagen
+        $sqlImagen = "SELECT imagen FROM pieza WHERE id = $idpieza";
+        $resImg = mysqli_query($conex, $sqlImagen);
+        $imgData = mysqli_fetch_assoc($resImg);
+
+        // Eliminar la imagen si existe
+        if (!empty($imgData['imagen']) && file_exists($imgData['imagen'])) {
+            unlink($imgData['imagen']); // elimina el archivo físico
+        }
+
         switch($opcionSelec){
             case "zoologia":
                 $sql="Delete from zoologia where idz=".$fila['idz'];

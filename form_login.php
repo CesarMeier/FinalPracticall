@@ -59,7 +59,7 @@
 
         
         <?php
-          include('footer.php');
+        include('footer.php');
         ?>
 
         <script src="js/viewpass.js"></script>

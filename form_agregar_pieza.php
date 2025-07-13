@@ -31,7 +31,7 @@ $fila=mysqli_fetch_array($result);
                 <div class="text-center mt-5 mb-2 text-success"><h2>Agregar Pieza</h2></div>	
                 <div class="text-secondary"><p><small>* Dato Obligatorio</small></p></div>
 
-                <form class="row g-3" action="insertar_datos_pieza.php" method="post" >
+                <form class="row g-3" action="insertar_datos_pieza.php" method="post" enctype="multipart/form-data">
 
                     <div class="col-sm-6">
                         <label for="nombre" class="form-label">* Nombre Donante</label>
@@ -82,6 +82,11 @@ $fila=mysqli_fetch_array($result);
                     <div class="col-sm-6">
                         <label for="observacion" class="form-label">* Observacion</label>
                         <input type="text" class="form-control" name="observacion" id="observacion" placeholder="Ingresar Observacion" required>
+                    </div>
+
+                    <div class="col-sm-6 mb-3">
+                        <label for="imagen" class="form-label">* Imagen de la pieza</label>
+                        <input type="file" class="form-control" name="imagen" id="imagen" accept="image/*" required>
                     </div>
 
                     <div class="col-sm-6 mb-3"> 
