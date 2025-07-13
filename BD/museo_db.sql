@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-07-2024 a las 21:40:15
--- Versión del servidor: 10.4.24-MariaDB
--- Versión de PHP: 7.4.29
+-- Tiempo de generación: 13-07-2025 a las 23:20:57
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -39,7 +39,7 @@ CREATE TABLE `arqueologia` (
   `genero` varchar(255) NOT NULL,
   `especie` varchar(255) NOT NULL,
   `pieza_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -59,7 +59,14 @@ CREATE TABLE `botanica` (
   `genero` varchar(255) NOT NULL,
   `especie` varchar(255) DEFAULT NULL,
   `pieza_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Volcado de datos para la tabla `botanica`
+--
+
+INSERT INTO `botanica` (`idb`, `distribucion`, `reino`, `phylum`, `division`, `clase`, `orden`, `familia`, `genero`, `especie`, `pieza_id`) VALUES
+(1, 'Botanica', 'Plantae', 'Magnoliophyta', 'Magnoliophyta', 'Magnoliopsida', 'Fabales', 'Fabaceae', 'Erythrina', 'E. crista-galli', 9);
 
 -- --------------------------------------------------------
 
@@ -72,7 +79,14 @@ CREATE TABLE `donante` (
   `nombre` varchar(45) DEFAULT NULL,
   `apellido` varchar(45) DEFAULT NULL,
   `fecha` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Volcado de datos para la tabla `donante`
+--
+
+INSERT INTO `donante` (`idd`, `nombre`, `apellido`, `fecha`) VALUES
+(9, 'Neldo', 'Croissant', '2025-07-07');
 
 -- --------------------------------------------------------
 
@@ -90,7 +104,7 @@ CREATE TABLE `geologia` (
   `genero` varchar(255) NOT NULL,
   `especie` varchar(255) NOT NULL,
   `pieza_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -109,7 +123,7 @@ CREATE TABLE `ictiologia` (
   `familia` varchar(255) NOT NULL,
   `genero` varchar(255) NOT NULL,
   `pieza_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -128,7 +142,7 @@ CREATE TABLE `oologia` (
   `familia` varchar(255) NOT NULL,
   `genero` varchar(255) NOT NULL,
   `pieza_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -146,7 +160,7 @@ CREATE TABLE `osteologia` (
   `familia` varchar(255) NOT NULL,
   `genero` varchar(255) NOT NULL,
   `pieza_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -165,7 +179,7 @@ CREATE TABLE `paleontologia` (
   `genero` varchar(255) NOT NULL,
   `especie` varchar(255) NOT NULL,
   `pieza_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -178,13 +192,21 @@ CREATE TABLE `pieza` (
   `numinventario` varchar(255) DEFAULT NULL,
   `especie` varchar(255) DEFAULT NULL,
   `estadoconservacion` varchar(255) DEFAULT NULL,
-  `fecha_ingreso` date DEFAULT NULL,
+  `fecha_ingreso` timestamp NULL DEFAULT NULL,
   `cantidadpiezas` varchar(255) DEFAULT NULL,
   `clasificacion` varchar(255) DEFAULT NULL,
   `observacion` varchar(255) DEFAULT NULL,
+  `imagen` varchar(255) DEFAULT NULL,
   `donante_id` int(11) NOT NULL,
   `usuario_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Volcado de datos para la tabla `pieza`
+--
+
+INSERT INTO `pieza` (`id`, `numinventario`, `especie`, `estadoconservacion`, `fecha_ingreso`, `cantidadpiezas`, `clasificacion`, `observacion`, `imagen`, `donante_id`, `usuario_id`) VALUES
+(9, '1', 'E. crista-galli', 'botanica', '2025-07-07 03:00:00', '2', 'botanica', 'Árbol nativo de Sudamérica, especialmente de Argentina, Uruguay, Paraguay y el sur de Brasil. Sus flores rojas intensas florecen en primavera y verano, atrayendo aves polinizadoras. Es la flor nacional de Argentina y Uruguay.', NULL, 9, 15);
 
 -- --------------------------------------------------------
 
@@ -202,15 +224,15 @@ CREATE TABLE `usuario` (
   `clave` varchar(255) DEFAULT NULL,
   `fecha_registro` date DEFAULT NULL,
   `tipo_usuario` varchar(45) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
 INSERT INTO `usuario` (`id`, `dni`, `nombre`, `apellido`, `telefono`, `email`, `clave`, `fecha_registro`, `tipo_usuario`) VALUES
-(10, '44135797', 'Cesar Oscar', 'Diaz Meier', '0385743526', 'cesar44135797@gmail.com', '$2y$10$ehcHlXCtF3BTilSbEMoKLObJrFz1ZLq3/7PaV1pIX8qrYnQAxX5ru', '2024-07-20', 'administrador'),
-(11, '44135798', 'Cesar Oscar', 'Diaz Meier', '0385743526', 'cesar44135797@gmail.com', '$2y$10$Td5osIv.XhkTOnXIAWF7NeqQz8t17keNoQx.79jqF1mTRfKn672Wi', '2024-07-20', 'gerente');
+(15, '10000000', 'administrador', 'admin', '3408435262', 'admin@gmail.com', '$2y$10$F4a8CY5I/AMnABGuKcCd/./ARVi43jOyN6l/4tsZ0U3JS4xo80NCG', '2025-07-07', 'administrador'),
+(16, '20000000', 'gerente', 'gerente', '3408435263', 'ger@gmail.com', '$2y$10$dDOF0XXN0AA54rbnpHD6IOGBRsxigxjRI82QxKLlMekn2GcOnGeNa', '2025-07-07', 'gerente');
 
 -- --------------------------------------------------------
 
@@ -229,7 +251,7 @@ CREATE TABLE `zoologia` (
   `genero` varchar(255) NOT NULL,
   `especie` varchar(255) DEFAULT NULL,
   `pieza_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Índices para tablas volcadas
@@ -319,19 +341,19 @@ ALTER TABLE `zoologia`
 -- AUTO_INCREMENT de la tabla `arqueologia`
 --
 ALTER TABLE `arqueologia`
-  MODIFY `ida` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ida` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `botanica`
 --
 ALTER TABLE `botanica`
-  MODIFY `idb` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idb` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `donante`
 --
 ALTER TABLE `donante`
-  MODIFY `idd` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idd` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT de la tabla `geologia`
@@ -343,13 +365,13 @@ ALTER TABLE `geologia`
 -- AUTO_INCREMENT de la tabla `ictiologia`
 --
 ALTER TABLE `ictiologia`
-  MODIFY `idi` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `oologia`
 --
 ALTER TABLE `oologia`
-  MODIFY `ido` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `osteologia`
@@ -361,25 +383,25 @@ ALTER TABLE `osteologia`
 -- AUTO_INCREMENT de la tabla `paleontologia`
 --
 ALTER TABLE `paleontologia`
-  MODIFY `idp` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `pieza`
 --
 ALTER TABLE `pieza`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de la tabla `zoologia`
 --
 ALTER TABLE `zoologia`
-  MODIFY `idz` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idz` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restricciones para tablas volcadas
