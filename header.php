@@ -22,7 +22,7 @@
                             <a class="nav-link text-white" href="listado_piezas.php">Listado De Piezas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Contacto</a>
+                            <a class="nav-link text-white" href="#info">Contacto</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="form_login.php">Ingresar</a>

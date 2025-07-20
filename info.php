@@ -46,7 +46,7 @@
             </div>
         </section>
 
-<section class="info"> 
+<section class="info" id="info"> 
     <div class="contacto">
         <h2 class="textform">Contactate con nosotros!</h2>
         <form name="form" action="" method="post">

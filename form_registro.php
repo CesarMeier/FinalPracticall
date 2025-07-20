@@ -25,7 +25,7 @@ if (!isset($_SESSION['dniadmin']) && !isset($_SESSION['dnigerente'])) {
 
         <section>
             <div class="container mt-2 mb-5">
-                <div class="text-center mt-5 mb-2 text-primary"><h2>Registrarse</h2></div>	
+                <div class="text-center mt-5 mb-2 text-primary"><h2>Registrar Usuario</h2></div>	
 
                 <form class="row g-3"action="registro.php" method="post">
 
