@@ -20,6 +20,17 @@ if(!empty(trim($_POST['nombre'])) && !empty(trim($_POST['apellido'])) && !empty(
 		if ($result){
 			$ultimoid=mysqli_insert_id($conex);
 
+		// Validar que el numinventario no exista ya
+		$numinventario = $_POST['numinventario'];
+		$verificar_sql = "SELECT id FROM pieza WHERE numinventario = '$numinventario'";
+		$verificar_result = mysqli_query($conex, $verificar_sql);
+
+		if (mysqli_num_rows($verificar_result) > 0) {
+			$error .= "El número de inventario ya existe. ";
+			header("Location:form_agregar_pieza.php?mensaje=" . urlencode($error));
+			exit();
+		}
+
 			// Subir imagen
 			$imagenRuta = '';
 			if (isset($_FILES['imagen']) && $_FILES['imagen']['error'] === 0) {
