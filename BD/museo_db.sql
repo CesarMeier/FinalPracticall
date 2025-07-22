@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-07-2025 a las 23:20:57
+-- Tiempo de generación: 22-07-2025 a las 21:34:48
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -86,7 +86,9 @@ CREATE TABLE `donante` (
 --
 
 INSERT INTO `donante` (`idd`, `nombre`, `apellido`, `fecha`) VALUES
-(9, 'Neldo', 'Croissant', '2025-07-07');
+(9, 'Neldo', 'Croissant', '2025-07-07'),
+(22, 'aaaa', 'aaaa', '2025-07-20'),
+(23, 'Cesar Oscar', 'Diaz Meier', '2025-07-22');
 
 -- --------------------------------------------------------
 
@@ -222,7 +224,7 @@ CREATE TABLE `usuario` (
   `telefono` varchar(10) DEFAULT NULL,
   `email` varchar(45) DEFAULT NULL,
   `clave` varchar(255) DEFAULT NULL,
-  `fecha_registro` date DEFAULT NULL,
+  `fecha_registro` time DEFAULT NULL,
   `tipo_usuario` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
@@ -231,8 +233,8 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id`, `dni`, `nombre`, `apellido`, `telefono`, `email`, `clave`, `fecha_registro`, `tipo_usuario`) VALUES
-(15, '10000000', 'administrador', 'admin', '3408435262', 'admin@gmail.com', '$2y$10$F4a8CY5I/AMnABGuKcCd/./ARVi43jOyN6l/4tsZ0U3JS4xo80NCG', '2025-07-07', 'administrador'),
-(16, '20000000', 'gerente', 'gerente', '3408435263', 'ger@gmail.com', '$2y$10$dDOF0XXN0AA54rbnpHD6IOGBRsxigxjRI82QxKLlMekn2GcOnGeNa', '2025-07-07', 'gerente');
+(15, '10000000', 'administrador', 'admin', '3408435262', 'admin@gmail.com', '$2y$10$F4a8CY5I/AMnABGuKcCd/./ARVi43jOyN6l/4tsZ0U3JS4xo80NCG', '00:00:00', 'administrador'),
+(16, '20000000', 'gerente', 'gerente', '3408435263', 'ger@gmail.com', '$2y$10$dDOF0XXN0AA54rbnpHD6IOGBRsxigxjRI82QxKLlMekn2GcOnGeNa', '00:00:00', 'gerente');
 
 -- --------------------------------------------------------
 
@@ -317,6 +319,7 @@ ALTER TABLE `paleontologia`
 --
 ALTER TABLE `pieza`
   ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `numinventario` (`numinventario`),
   ADD KEY `fk_pieza_donante_idx` (`donante_id`),
   ADD KEY `fk_pieza_usuario1_idx` (`usuario_id`);
 
@@ -353,7 +356,7 @@ ALTER TABLE `botanica`
 -- AUTO_INCREMENT de la tabla `donante`
 --
 ALTER TABLE `donante`
-  MODIFY `idd` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `idd` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de la tabla `geologia`
@@ -389,7 +392,7 @@ ALTER TABLE `paleontologia`
 -- AUTO_INCREMENT de la tabla `pieza`
 --
 ALTER TABLE `pieza`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
